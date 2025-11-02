@@ -1,0 +1,60 @@
+﻿🗓️ Plano de Trabalho (1 nov – 25 dez)
+Semana 1 (1–7 nov) — Organização e Planeamento
+Ambos:
+    • Escolher o website a replicar (ex: Sixt, Europcar, etc.) e registar no Moodle.
+    • Criar pasta de projeto e estrutura inicial (index.html, estilos.css, logica.js).
+    • Recolher screenshots e analisar layout, cores, tipografia e menus.
+    • Dividir responsabilidades (HTML/CSS → um; JS → outro, com revisão cruzada).
+
+Semana 2 (8–14 nov) — Estrutura HTML
+Aluno A:
+    • Criar a estrutura base do HTML (header, nav, main, footer).
+    • Implementar secções principais (hero, ofertas, contactos, etc.).
+Aluno B:
+    • Ajudar na marcação semântica e garantir acessibilidade básica.
+    • Preparar conteúdo estático (texto, placeholders de imagens).
+
+Semana 3 (15–21 nov) — Estilos e Layout Responsivo (CSS)
+Aluno A:
+    • Implementar layout com Flexbox e Grid.
+    • Aplicar cores, fontes e espaçamentos.
+Aluno B:
+    • Testar em diferentes resoluções e começar as media queries.
+    • Implementar menu hover com submenus.
+
+Semana 4 (22–28 nov) — Responsividade e Menu Sandwich
+Aluno A:
+    • Aperfeiçoar responsividade (máximo 3 breakpoints).
+    • Ajustar proporções e imagens.
+Aluno B:
+    • Criar o menu sandwich (hambúrguer) em JS (mostrar/ocultar menu).
+    • Testar em dispositivos móveis.
+
+Semana 5 (29 nov–5 dez) — Formulário de Pesquisa
+Aluno A:
+    • Implementar o formulário HTML (categoria, locais, datas, checkbox).
+Aluno B:
+    • Implementar a lógica JS para ocultar/mostrar “Devolução em Local Diferente”.
+    • Validar campos obrigatórios.
+
+Semana 6 (6–12 dez) — Lógica de Veículos e Cálculos
+Ambos (em conjunto):
+    • Criar array com 8 veículos (4 carros, 4 carrinhas).
+    • Implementar geração dinâmica dos 4 veículos mostrados.
+    • Calcular preço diário, total e descontos empresariais.
+    • Implementar botão “Ver detalhes” com explicação do cálculo.
+
+Semana 7 (13–19 dez) — Testes e Correções
+Aluno A:
+    • Rever design e consistência com o site original.
+    • Corrigir bugs de layout.
+Aluno B:
+    • Testar lógica e cálculos (datas, descontos, diferentes locais).
+    • Garantir que todos os requisitos funcionam.
+
+Semana 8 (20–25 dez) — Finalização e Entrega
+Ambos:
+    • Revisar o código, adicionar comentários e limpar ficheiros.
+    • Criar ficheiro .zip conforme regras de entrega.
+    • Fazer simulação de defesa (explicar partes em JS e CSS).
+
