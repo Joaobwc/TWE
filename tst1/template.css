@@ -44,4 +44,50 @@
 
 .nav_var {
   background-color: aqua;
+}
+
+footer {
+  padding: 40px;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+footer .primeira_linha {
+  display: flex;
+}
+
+footer .primeira_linha .redes {
+  margin-left: auto;
+}
+
+footer .primeira_linha .redes .social {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+footer .links {
+  display: flex;
+  color: white;
+}
+
+footer .links .coluna1 ul,
+footer .links .coluna2 ul {
+  list-style: none;
+  color: white;
+}
+
+footer .aplicacoes {
+  padding-top: 30px;
+}
+
+footer .final_footer {
+  padding-top: 30px;
+}
+
+footer .final_footer .apoiocliente {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding-top: 30px;
 }/*# sourceMappingURL=template.css.map */

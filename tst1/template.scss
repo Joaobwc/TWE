@@ -3,25 +3,25 @@
 $cor-principal: orange;
 
 //Reset do css default aplicado pelos bavegadores
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
 
-.container{
+.container {
     background-color: $cor-principal;
-    height:700px;
+    height: 700px;
     max-width: 100%;
     text-align: center;
 
 }
 
-.conteiner_2{
+.conteiner_2 {
     display: grid;
-    grid-template-rows:  1fr 2fr 4fr;
+    grid-template-rows: 1fr 2fr 4fr;
     grid-template-columns: 1fr 4fr 1fr;
-    background-color:blue ;
+    background-color: blue;
     height: 70%;
     max-width: 100%;
 
@@ -31,33 +31,78 @@ $cor-principal: orange;
     background-size: cover;
     background-position: center;
     min-height: 30vh;
-
-
-
-    
 }
+
 ///////////////////////////////////////////////////////////////////////////////
 // menu com sixt | gerir as Reservas | PT | Iniciar sessão
-.lista{
+.lista {
     display: flex;
 }
 
-.lista li{
+.lista li {
     text-align: center;
     color: white;
     list-style: none;
     padding: 1%;
 
-} 
-.direita{
+}
+
+.direita {
     margin-left: auto;
 }
+
 //////////////////////////////////////////////////////////////////////////////
-.header{
+.header {
     background-color: black;
 
 }
 
-.nav_var{
+.nav_var {
     background-color: aqua;
-} 
+}
+
+footer {
+    padding: 40px;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+footer .primeira_linha {
+    display: flex;
+}
+
+footer .primeira_linha .redes {
+    margin-left: auto;
+}
+
+footer .primeira_linha .redes .social {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+footer .links {
+    display: flex;
+    color: white;
+}
+
+footer .links .coluna1 ul,
+footer .links .coluna2 ul {
+    list-style: none;
+    color: white;
+}
+
+footer .aplicacoes {
+    padding-top: 30px;
+}
+
+footer .final_footer {
+    padding-top: 30px;
+}
+
+footer .final_footer .apoiocliente {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding-top: 30px;
+}
