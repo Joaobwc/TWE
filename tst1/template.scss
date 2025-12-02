@@ -1,0 +1,63 @@
+//Variáveis//
+//cores principais da página
+$cor-principal: orange;
+
+//Reset do css default aplicado pelos bavegadores
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.container{
+    background-color: $cor-principal;
+    height:700px;
+    max-width: 100%;
+    text-align: center;
+
+}
+
+.conteiner_2{
+    display: grid;
+    grid-template-rows:  1fr 2fr 4fr;
+    grid-template-columns: 1fr 4fr 1fr;
+    background-color:blue ;
+    height: 70%;
+    max-width: 100%;
+
+
+    //Background do container Imagem do porshe
+    background-image: url(porshe.png);
+    background-size: cover;
+    background-position: center;
+    min-height: 30vh;
+
+
+
+    
+}
+///////////////////////////////////////////////////////////////////////////////
+// menu com sixt | gerir as Reservas | PT | Iniciar sessão
+.lista{
+    display: flex;
+}
+
+.lista li{
+    text-align: center;
+    color: white;
+    list-style: none;
+    padding: 1%;
+
+} 
+.direita{
+    margin-left: auto;
+}
+//////////////////////////////////////////////////////////////////////////////
+.header{
+    background-color: black;
+
+}
+
+.nav_var{
+    background-color: aqua;
+} 
