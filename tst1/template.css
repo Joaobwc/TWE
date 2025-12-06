@@ -46,6 +46,42 @@
   background-color: aqua;
 }
 
+.primeiro_principal {
+  display: flex;
+  padding: 40px;
+  gap: 40px;
+}
+
+#primeirasfotos {
+  display: grid;
+  grid-template-areas: 'foto1 foto1' 'foto2 foto3';
+  padding: 30px;
+  gap: 30px;
+  height: 1000px;
+  width: 1080px;
+
+  .foto1 {
+    grid-area: foto1;
+    background-image: url(mercedes.png);
+    height: 100%;
+    width: 100%;
+  }
+
+  .foto2 {
+    grid-area: foto2;
+    background-image: url(smart.png);
+    height: 180px;
+
+  }
+
+  .foto3 {
+    grid-area: foto3;
+    background-image: url(porsche_descapotavel.png);
+    height: 180px;
+    width: 100%;
+  }
+}
+
 footer {
   padding: 40px;
   background-color: #1a1a1a;
@@ -85,9 +121,11 @@ footer .final_footer {
   padding-top: 30px;
 }
 
-footer .final_footer .apoiocliente {
+.lista_cliente {
   list-style: none;
   display: flex;
   gap: 15px;
   padding-top: 30px;
-}/*# sourceMappingURL=template.css.map */
+}
+
+/*# sourceMappingURL=template.css.map */
