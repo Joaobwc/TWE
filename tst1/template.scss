@@ -1,6 +1,13 @@
 //Variáveis//
 //cores principais da página
-$cor-principal: orange;
+$cor-principal: #FF5000;
+$fonte:HelveticaNow Helvetica Roboto Arial,sans-serif;
+
+//download da font 
+@font-face{
+    font-family: xpto;
+    src: por merter;
+};
 
 //Reset do css default aplicado pelos bavegadores
 * {
@@ -20,15 +27,14 @@ $cor-principal: orange;
 
 .div2 {
     display: grid;
-    //grid-template-rows: auto; Faz isso por default
-    grid-template-columns: 0.6fr 4fr 0.6fr;
-    background-color: blue;
+    grid-template-rows:50px;
+    grid-template-columns: 0.7fr 4fr 0.7fr;
     height: 700px;
 
 
 
-    //Background do Imagem do porshe
-    background-image: url(porshe.png);
+    //Background do Imagem do porshe e Escurecer a imagem á volta
+    background-image:url(porshe_vp_100.png); 
     background-size: cover;
     background-position: center;
 }
@@ -36,8 +42,14 @@ $cor-principal: orange;
 ///////////////////////////////////////////////////////////////////////////////
 //cor do menu sixt | gerir as Reservas | PT | Iniciar sessão
 .header {
-    background-color: black;
+
+    background-color: transparent;
+
+    
     height: 5vh;
+
+    grid-row: 1 / 1;
+    grid-column: 2 /3;
 
 }
 
@@ -68,17 +80,16 @@ $cor-principal: orange;
     height: 17vh;
     border-radius: 1vw; //Ao diminuir o viewport o arrendodamento do quantos não se mantem. Corrijo com a media query?
 
+    grid-row: 2/2;
+    grid-column: 2/3;
+
 
 }
-
-.primeiro_principal .principal_c1 {
-    display: flex;
-}
-
 //div com A aventura começa aqui.
 .texto{
-    text-align: center;
-
+    display: flex;
+    justify-content: center; // horizontal, main axis
+    align-items: center; // vertival, cross axis
     height: 20vh;
     max-width: 100%;
     background-color: $cor-principal;
@@ -86,6 +97,12 @@ $cor-principal: orange;
 
 }
 ///////////////////////////////////////
+
+.primeiro_principal .principal_c1 {
+    display: flex;
+}
+
+
 footer {
     padding: 40px;
     background-color: #1a1a1a;

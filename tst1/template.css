@@ -1,10 +1,14 @@
+@font-face {
+  font-family: xpto;
+  src: por merter;
+}
 * {
   margin: 0;
   padding: 0;
 }
 
 .div1 {
-  background-color: orange;
+  background-color: #FF5000;
   height: 20px;
   max-width: 100%;
   text-align: center;
@@ -13,17 +17,19 @@
 
 .div2 {
   display: grid;
-  grid-template-columns: 0.6fr 4fr 0.6fr;
-  background-color: blue;
+  grid-template-rows: 50px;
+  grid-template-columns: 0.7fr 4fr 0.7fr;
   height: 700px;
-  background-image: url(porshe.png);
+  background-image: url(porshe_vp_100.png);
   background-size: cover;
   background-position: center;
 }
 
 .header {
-  background-color: black;
+  background-color: transparent;
   height: 5vh;
+  grid-row: 1/1;
+  grid-column: 2/3;
 }
 
 .lista {
@@ -46,49 +52,21 @@
   max-width: 100%;
   height: 17vh;
   border-radius: 1vw;
+  grid-row: 2/2;
+  grid-column: 2/3;
 }
 
 .texto {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 20vh;
   max-width: 100%;
-  background-color: orange;
+  background-color: #FF5000;
 }
 
-.primeiro_principal {
+.primeiro_principal .principal_c1 {
   display: flex;
-  padding: 40px;
-  gap: 40px;
-}
-
-#primeirasfotos {
-  display: grid;
-  grid-template-areas: 'foto1 foto1' 'foto2 foto3';
-  padding: 30px;
-  gap: 30px;
-  height: 1000px;
-  width: 1080px;
-
-  .foto1 {
-    grid-area: foto1;
-    background-image: url(mercedes.png);
-    height: 100%;
-    width: 100%;
-  }
-
-  .foto2 {
-    grid-area: foto2;
-    background-image: url(smart.png);
-    height: 180px;
-
-  }
-
-  .foto3 {
-    grid-area: foto3;
-    background-image: url(porsche_descapotavel.png);
-    height: 180px;
-    width: 100%;
-  }
 }
 
 footer {
@@ -130,11 +108,9 @@ footer .final_footer {
   padding-top: 30px;
 }
 
-.lista_cliente {
+.lista_cliente ul {
   list-style: none;
   display: flex;
   gap: 15px;
   padding-top: 30px;
-}
-
-/*# sourceMappingURL=template.css.map */
+}/*# sourceMappingURL=template.css.map */
