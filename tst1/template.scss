@@ -90,6 +90,7 @@ $fonte:HelveticaNow Helvetica Roboto Arial,sans-serif;
     display: flex;
     justify-content: center; // horizontal, main axis
     align-items: center; // vertival, cross axis
+    flex-direction: column; // voltar a coluna cada elemento da class texto
     height: 20vh;
     max-width: 100%;
     background-color: $cor-principal;

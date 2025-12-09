@@ -60,6 +60,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 20vh;
   max-width: 100%;
   background-color: #FF5000;
