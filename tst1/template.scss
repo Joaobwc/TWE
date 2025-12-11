@@ -1,13 +1,14 @@
 //Variáveis//
 //cores principais da página
 $cor-principal: #FF5000;
-$fonte:HelveticaNow Helvetica Roboto Arial,sans-serif;
+$fonte: HelveticaNow Helvetica Roboto Arial, sans-serif;
 
 //download da font 
-@font-face{
+@font-face {
     font-family: xpto;
     src: por merter;
-};
+}
+
 
 //Reset do css default aplicado pelos bavegadores
 * {
@@ -27,14 +28,14 @@ $fonte:HelveticaNow Helvetica Roboto Arial,sans-serif;
 
 .div2 {
     display: grid;
-    grid-template-rows:50px;
+    grid-template-rows: 50px;
     grid-template-columns: 0.7fr 4fr 0.7fr;
     height: 700px;
 
 
 
     //Background do Imagem do porshe e Escurecer a imagem á volta
-    background-image:url(porshe_vp_100.png); 
+    background-image: url(porshe_vp_100.png);
     background-size: cover;
     background-position: center;
 }
@@ -45,7 +46,7 @@ $fonte:HelveticaNow Helvetica Roboto Arial,sans-serif;
 
     background-color: transparent;
 
-    
+
     height: 5vh;
 
     grid-row: 1 / 1;
@@ -75,7 +76,7 @@ $fonte:HelveticaNow Helvetica Roboto Arial,sans-serif;
 
 //menu branco de aluguer
 .nav_var {
-    background-color:   white;
+    background-color: white;
     max-width: 100%;
     height: 17vh;
     border-radius: 1vw; //Ao diminuir o viewport o arrendodamento do quantos não se mantem. Corrijo com a media query?
@@ -85,8 +86,9 @@ $fonte:HelveticaNow Helvetica Roboto Arial,sans-serif;
 
 
 }
+
 //div com A aventura começa aqui.
-.texto{
+.texto {
     display: flex;
     justify-content: center; // horizontal, main axis
     align-items: center; // vertival, cross axis
@@ -96,6 +98,7 @@ $fonte:HelveticaNow Helvetica Roboto Arial,sans-serif;
 
 
 }
+
 ///////////////////////////////////////
 
 .primeiro_principal .principal_c1 {
@@ -103,6 +106,56 @@ $fonte:HelveticaNow Helvetica Roboto Arial,sans-serif;
 }
 
 
+
+
+
+//Ultimo andar
+
+#ultimo_andar {
+    display: flex;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    gap: 40px;
+
+    #texto_ultimo_andar {
+        width: 26%;
+
+        h2 {
+            padding-bottom: 20px;
+        }
+    }
+
+    #botao1,
+    #botao2,
+    #botao3,
+    #botao4 {
+        border: none;
+        height: 30px;
+        width: 200px;
+        background-color: rgb(244, 245, 246);
+        border-radius: 15px;
+        padding: 10px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(170, 170, 170);
+        }
+
+        &:active {
+            background-color: rgb(26, 26, 26);
+            color: white;
+        }
+
+        #lista1 ul {
+            gap: 50px;
+            display: flex;
+            padding: 30px;
+            list-style: none
+        }
+    }
+}
+
+//Footer
 footer {
     padding: 40px;
     background-color: #1a1a1a;
@@ -111,10 +164,13 @@ footer {
 
 footer .primeira_linha {
     display: flex;
-}
+    justify-content: space-between;
 
-footer .primeira_linha .redes {
-    margin-left: auto;
+    #til {
+        color: rgb(255, 80, 0);
+    }
+
+    height: 60px;
 }
 
 footer .primeira_linha .redes .social {
@@ -126,13 +182,22 @@ footer .primeira_linha .redes .social {
 footer .links {
     display: flex;
     color: white;
+    justify-content: space-between;
+
+    .coluna3 ul {
+        width: 550px;
+        justify-content: right;
+    }
 }
 
 footer .links .coluna1 ul,
 footer .links .coluna2 ul {
     list-style: none;
     color: white;
+    gap: 80px;
+    width: 380px;
 }
+
 
 footer .aplicacoes {
     padding-top: 30px;
@@ -142,7 +207,7 @@ footer .final_footer {
     padding-top: 30px;
 }
 
-.lista_cliente ul {
+.lista_cliente {
     list-style: none;
     display: flex;
     gap: 15px;

@@ -69,6 +69,53 @@
   display: flex;
 }
 
+#ultimo_andar {
+  display: flex;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  gap: 40px;
+}
+#ultimo_andar #texto_ultimo_andar {
+  width: 26%;
+}
+#ultimo_andar #texto_ultimo_andar h2 {
+  padding-bottom: 20px;
+}
+#ultimo_andar #botao1,
+#ultimo_andar #botao2,
+#ultimo_andar #botao3,
+#ultimo_andar #botao4 {
+  border: none;
+  height: 30px;
+  width: 200px;
+  background-color: rgb(244, 245, 246);
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+}
+#ultimo_andar #botao1:hover,
+#ultimo_andar #botao2:hover,
+#ultimo_andar #botao3:hover,
+#ultimo_andar #botao4:hover {
+  background-color: rgb(170, 170, 170);
+}
+#ultimo_andar #botao1:active,
+#ultimo_andar #botao2:active,
+#ultimo_andar #botao3:active,
+#ultimo_andar #botao4:active {
+  background-color: rgb(26, 26, 26);
+  color: white;
+}
+#ultimo_andar #botao1 #lista1 ul,
+#ultimo_andar #botao2 #lista1 ul,
+#ultimo_andar #botao3 #lista1 ul,
+#ultimo_andar #botao4 #lista1 ul {
+  gap: 50px;
+  display: flex;
+  padding: 30px;
+  list-style: none;
+}
+
 footer {
   padding: 40px;
   background-color: #1a1a1a;
@@ -77,10 +124,11 @@ footer {
 
 footer .primeira_linha {
   display: flex;
+  justify-content: space-between;
+  height: 60px;
 }
-
-footer .primeira_linha .redes {
-  margin-left: auto;
+footer .primeira_linha #til {
+  color: rgb(255, 80, 0);
 }
 
 footer .primeira_linha .redes .social {
@@ -92,12 +140,19 @@ footer .primeira_linha .redes .social {
 footer .links {
   display: flex;
   color: white;
+  justify-content: space-between;
+}
+footer .links .coluna3 ul {
+  width: 550px;
+  justify-content: right;
 }
 
 footer .links .coluna1 ul,
 footer .links .coluna2 ul {
   list-style: none;
   color: white;
+  gap: 80px;
+  width: 380px;
 }
 
 footer .aplicacoes {
@@ -108,7 +163,7 @@ footer .final_footer {
   padding-top: 30px;
 }
 
-.lista_cliente ul {
+.lista_cliente {
   list-style: none;
   display: flex;
   gap: 15px;
