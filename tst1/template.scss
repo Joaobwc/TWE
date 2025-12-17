@@ -14,7 +14,10 @@ $fonte: HelveticaNow Helvetica Roboto Arial, sans-serif;
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; 
 }
+
+
 
 
 .div1 {
@@ -25,7 +28,7 @@ $fonte: HelveticaNow Helvetica Roboto Arial, sans-serif;
     padding: 0.1%;
 
 }
-
+///////////////////////////////////////////////////////////////////////////////
 .div2 {
     display: grid;
     grid-template-rows: 50px;
@@ -35,17 +38,59 @@ $fonte: HelveticaNow Helvetica Roboto Arial, sans-serif;
 
 
     //Background do Imagem do porshe e Escurecer a imagem á volta
+<<<<<<< Updated upstream
     background-image: url(porshe_vp_100.png);
+=======
+    background-image:linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.5)), url(porshe_vp_100.png); 
+>>>>>>> Stashed changes
     background-size: cover;
     background-position: center;
 }
 
-///////////////////////////////////////////////////////////////////////////////
-//cor do menu sixt | gerir as Reservas | PT | Iniciar sessão
-.header {
 
-    background-color: transparent;
+    //cor do menu sixt | gerir as Reservas | PT | Iniciar sessão
+    .header {
 
+        background-color: transparent;
+
+        
+        height: 5vh;
+
+        grid-row: 1 / 1;
+        grid-column: 2 /3;
+
+    }
+
+    .lista {
+        display: flex;
+    }
+
+    .lista li {
+        text-align: center;
+        color: white;
+        list-style: none;
+        padding: 1%;
+
+    }
+
+    .direita {
+        //podia utilizar o flex para ordenar, mas não é tao eficiente
+        margin-left: auto;
+    }
+
+
+
+    //menu branco de aluguer
+    .nav_var {
+        background-color:   white;
+        max-width: 100%;
+        height: 17vh;
+        border-radius: 1rem; //Ao diminuir o viewport o arrendodamento do quantos não se mantem. Corrijo com a media query?
+
+        //grid-row: 2/2;
+        //grid-column: 2/3;
+
+<<<<<<< Updated upstream
 
     height: 5vh;
 
@@ -89,6 +134,33 @@ $fonte: HelveticaNow Helvetica Roboto Arial, sans-serif;
 
 //div com A aventura começa aqui.
 .texto {
+=======
+    
+        top: 60px;
+        position: absolute;//posição fixa do menu //absolut
+        z-index: 1000; //colocar o menu sempre à frente
+
+
+        /* 1. Define o tamanho */
+        width: 90%;          /* Ocupa 90% da largura em telemóveis */
+        max-width: 800px;    /* Mas nunca passa de 800px em Desktop */
+        
+        /* 2. Cria o "trilho" para centrar */
+        left: 0;
+        right: 0;
+        
+        /* 3. Centra automaticamente no espaço disponível */
+        margin-left: auto;
+        margin-right: auto;
+
+
+    }
+
+///////////////////////////////////////////////////////////////////////////////
+
+//div3 com A aventura começa aqui.
+.div3{
+>>>>>>> Stashed changes
     display: flex;
     justify-content: center; // horizontal, main axis
     align-items: center; // vertival, cross axis
@@ -98,8 +170,27 @@ $fonte: HelveticaNow Helvetica Roboto Arial, sans-serif;
 
 
 }
+<<<<<<< Updated upstream
 
 ///////////////////////////////////////
+=======
+///////////////////////////////////////////////////////////////////////////////
+
+//div4 Textos Confiável..., Veículos...
+.div4{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 80px; //gap:80, faria extamente o mesmo 
+    height: 20vh;;
+
+}
+///////////////////////////////////////////////////////////////////////////////
+
+//div5 uma imagem com o mercedes
+.div
+>>>>>>> Stashed changes
 
 .primeiro_principal .principal_c1 {
     display: flex;
