@@ -1,14 +1,13 @@
 //Variáveis//
 //cores principais da página
 $cor-principal: #FF5000;
-$fonte: HelveticaNow Helvetica Roboto Arial, sans-serif;
+$fonte:HelveticaNow Helvetica Roboto Arial,sans-serif;
 
 //download da font 
-@font-face {
+@font-face{
     font-family: xpto;
     src: por merter;
-}
-
+};
 
 //Reset do css default aplicado pelos bavegadores
 * {
@@ -31,18 +30,14 @@ $fonte: HelveticaNow Helvetica Roboto Arial, sans-serif;
 ///////////////////////////////////////////////////////////////////////////////
 .div2 {
     display: grid;
-    grid-template-rows: 50px;
+    grid-template-rows:50px;
     grid-template-columns: 0.7fr 4fr 0.7fr;
     height: 700px;
 
 
 
     //Background do Imagem do porshe e Escurecer a imagem á volta
-<<<<<<< Updated upstream
-    background-image: url(porshe_vp_100.png);
-=======
     background-image:linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.5)), url(porshe_vp_100.png); 
->>>>>>> Stashed changes
     background-size: cover;
     background-position: center;
 }
@@ -90,53 +85,8 @@ $fonte: HelveticaNow Helvetica Roboto Arial, sans-serif;
         //grid-row: 2/2;
         //grid-column: 2/3;
 
-<<<<<<< Updated upstream
-
-    height: 5vh;
-
-    grid-row: 1 / 1;
-    grid-column: 2 /3;
-
-}
-
-.lista {
-    display: flex;
-}
-
-.lista li {
-    text-align: center;
-    color: white;
-    list-style: none;
-    padding: 1%;
-
-}
-
-.direita {
-    //podia utilizar o flex para ordenar, mas não é tao eficiente
-    margin-left: auto;
-}
-
-//////////////////////////////////////////////////////////////////////////////
-
-
-//menu branco de aluguer
-.nav_var {
-    background-color: white;
-    max-width: 100%;
-    height: 17vh;
-    border-radius: 1vw; //Ao diminuir o viewport o arrendodamento do quantos não se mantem. Corrijo com a media query?
-
-    grid-row: 2/2;
-    grid-column: 2/3;
-
-
-}
-
-//div com A aventura começa aqui.
-.texto {
-=======
     
-        top: 60px;
+        top: 50px;
         position: absolute;//posição fixa do menu //absolut
         z-index: 1000; //colocar o menu sempre à frente
 
@@ -160,20 +110,16 @@ $fonte: HelveticaNow Helvetica Roboto Arial, sans-serif;
 
 //div3 com A aventura começa aqui.
 .div3{
->>>>>>> Stashed changes
     display: flex;
     justify-content: center; // horizontal, main axis
     align-items: center; // vertival, cross axis
+    flex-direction: column; // voltar a coluna cada elemento da class texto
     height: 20vh;
     max-width: 100%;
     background-color: $cor-principal;
 
 
 }
-<<<<<<< Updated upstream
-
-///////////////////////////////////////
-=======
 ///////////////////////////////////////////////////////////////////////////////
 
 //div4 Textos Confiável..., Veículos...
@@ -190,7 +136,6 @@ $fonte: HelveticaNow Helvetica Roboto Arial, sans-serif;
 
 //div5 uma imagem com o mercedes
 .div
->>>>>>> Stashed changes
 
 .primeiro_principal .principal_c1 {
     display: flex;
@@ -303,13 +248,10 @@ footer {
 
 footer .primeira_linha {
     display: flex;
-    justify-content: space-between;
+}
 
-    #til {
-        color: rgb(255, 80, 0);
-    }
-
-    height: 60px;
+footer .primeira_linha .redes {
+    margin-left: auto;
 }
 
 footer .primeira_linha .redes .social {
@@ -337,7 +279,6 @@ footer .links .coluna2 ul {
     width: 380px;
 }
 
-
 footer .aplicacoes {
     padding-top: 30px;
 }
@@ -346,9 +287,9 @@ footer .final_footer {
     padding-top: 30px;
 }
 
-.lista_cliente {
+.lista_cliente ul {
     list-style: none;
     display: flex;
     gap: 15px;
-    padding-top: 30px;
-}
+    padding-top: 30px; 
+} 
