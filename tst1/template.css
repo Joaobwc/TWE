@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: xpto;
   src: por merter;
@@ -70,6 +71,10 @@
 }
 
 #quarto_andar {
+  background-color: rgb(230, 230, 230);
+}
+#quarto_andar h1 {
+  padding-top: 50px;
   text-align: center;
 }
 #quarto_andar #caixas_quarto_andar {
@@ -79,11 +84,94 @@
   gap: 40px;
 }
 #quarto_andar #sixt_empresas {
+  cursor: pointer;
+  text-align: center;
+  border-radius: 15px;
+  display: block;
   color: white;
   background-image: url(homem_com_mercedes.png);
-  height: 700px;
-  width: 500px;
   background-size: cover;
+  height: 700px;
+  width: 480px;
+}
+#quarto_andar #sixt_empresas ul {
+  list-style: none;
+}
+#quarto_andar #sixt_empresas ul button {
+  align-items: center;
+  color: white;
+  border-color: white;
+  height: 30px;
+  width: 120px;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+#quarto_andar #sixt_empresas ul h3 {
+  padding-top: 60px;
+}
+#quarto_andar #sixt_empresas ul li {
+  padding: 10px;
+}
+#quarto_andar #subscrição_automóvel {
+  cursor: pointer;
+  text-align: center;
+  border-radius: 15px;
+  display: block;
+  color: white;
+  background-image: url(bmw.png);
+  background-size: cover;
+  height: 700px;
+  width: 480px;
+}
+#quarto_andar #subscrição_automóvel ul {
+  list-style: none;
+}
+#quarto_andar #subscrição_automóvel ul button {
+  align-items: center;
+  color: white;
+  border-color: white;
+  height: 30px;
+  width: 120px;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+#quarto_andar #subscrição_automóvel ul h3 {
+  padding-top: 60px;
+}
+#quarto_andar #subscrição_automóvel ul li {
+  padding: 10px;
+}
+#quarto_andar #SIXT_RIDE {
+  cursor: pointer;
+  text-align: center;
+  border-radius: 15px;
+  display: block;
+  color: white;
+  background-image: url(mulher.png);
+  background-size: cover;
+  height: 700px;
+  width: 480px;
+}
+#quarto_andar #SIXT_RIDE ul {
+  list-style: none;
+}
+#quarto_andar #SIXT_RIDE ul button {
+  align-items: center;
+  color: white;
+  border-color: white;
+  height: 30px;
+  width: 120px;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+#quarto_andar #SIXT_RIDE ul h3 {
+  padding-top: 60px;
+}
+#quarto_andar #SIXT_RIDE ul li {
+  padding: 10px;
 }
 
 #quinto_andar {
@@ -106,6 +194,7 @@
   text-align: center;
 }
 #quinto_andar span #yasmin {
+  padding-top: 30px;
   font-size: 27px;
 }
 
@@ -121,91 +210,133 @@
 #ultimo_andar #texto_ultimo_andar h2 {
   padding-bottom: 20px;
 }
-#ultimo_andar #botao1,
-#ultimo_andar #botao2,
-#ultimo_andar #botao3,
-#ultimo_andar #botao4 {
+#ultimo_andar #botoes #lista_aeroportos {
+  padding-left: 40px;
+  display: flex;
+  gap: 50px;
+  list-style: none;
+}
+#ultimo_andar #botoes #lista_aeroportos #btn_aeroporto,
+#ultimo_andar #botoes #lista_aeroportos #btn_balcoes1,
+#ultimo_andar #botoes #lista_aeroportos #btn_balcoes2,
+#ultimo_andar #botoes #lista_aeroportos #btn_mundo {
   border: none;
   height: 30px;
   width: 200px;
   background-color: rgb(244, 245, 246);
   border-radius: 15px;
-  padding: 10px;
   cursor: pointer;
 }
-#ultimo_andar #botao1:hover,
-#ultimo_andar #botao2:hover,
-#ultimo_andar #botao3:hover,
-#ultimo_andar #botao4:hover {
+#ultimo_andar #botoes #lista_aeroportos #btn_aeroporto:hover,
+#ultimo_andar #botoes #lista_aeroportos #btn_balcoes1:hover,
+#ultimo_andar #botoes #lista_aeroportos #btn_balcoes2:hover,
+#ultimo_andar #botoes #lista_aeroportos #btn_mundo:hover {
   background-color: rgb(170, 170, 170);
 }
-#ultimo_andar #botao1:active,
-#ultimo_andar #botao2:active,
-#ultimo_andar #botao3:active,
-#ultimo_andar #botao4:active {
+#ultimo_andar #botoes #lista_aeroportos #btn_aeroporto:active,
+#ultimo_andar #botoes #lista_aeroportos #btn_balcoes1:active,
+#ultimo_andar #botoes #lista_aeroportos #btn_balcoes2:active,
+#ultimo_andar #botoes #lista_aeroportos #btn_mundo:active {
   background-color: rgb(26, 26, 26);
   color: white;
 }
-#ultimo_andar #botao1 #lista1 ul,
-#ultimo_andar #botao2 #lista1 ul,
-#ultimo_andar #botao3 #lista1 ul,
-#ultimo_andar #botao4 #lista1 ul {
-  gap: 50px;
+#ultimo_andar #botoes #conteudo_btn {
+  padding-left: 90px;
+  padding-top: 50px;
   display: flex;
-  padding: 30px;
-  list-style: none;
+  gap: 45px;
+}
+#ultimo_andar #botoes #conteudo_btn .coluna p {
+  gap: 60px;
+  padding: 3px;
+  font-size: 16px;
+}
+
+.lista-grid {
+  display: flex;
+  color: red;
 }
 
 footer {
-  padding: 40px;
+  padding-top: 20px;
   background-color: #1a1a1a;
   color: white;
 }
-
 footer .primeira_linha {
   display: flex;
   justify-content: space-between;
   height: 60px;
 }
+footer .primeira_linha .simbolo_sixt {
+  cursor: pointer;
+}
+footer .primeira_linha li {
+  cursor: pointer;
+}
 footer .primeira_linha #til {
   color: rgb(255, 80, 0);
 }
-
 footer .primeira_linha .redes .social {
   display: flex;
   gap: 15px;
   list-style: none;
 }
-
 footer .links {
   display: flex;
   color: white;
   justify-content: space-between;
 }
-footer .links .coluna3 ul {
+footer .links .coluna3 {
   width: 550px;
   justify-content: right;
 }
-
-footer .links .coluna1 ul,
-footer .links .coluna2 ul {
+footer .links #coluna1 li {
+  margin-bottom: 13px;
   list-style: none;
   color: white;
-  gap: 80px;
-  width: 380px;
+  gap: 100px;
+  cursor: pointer;
 }
-
+footer .links #coluna1 li h3 {
+  cursor: auto;
+}
+footer .links #coluna2 li {
+  margin-bottom: 13px;
+  list-style: none;
+  color: white;
+  gap: 100px;
+  cursor: pointer;
+}
+footer .links #coluna2 li h3 {
+  cursor: auto;
+}
 footer .aplicacoes {
   padding-top: 30px;
+  display: flex;
+  gap: 10px;
 }
-
+footer .aplicacoes #app_store {
+  cursor: pointer;
+}
+footer .aplicacoes #google_play {
+  cursor: pointer;
+}
 footer .final_footer {
   padding-top: 30px;
 }
-
-.lista_cliente {
-  list-style: none;
-  display: flex;
-  gap: 15px;
+footer .final_footer #livro_reclamações {
+  cursor: pointer;
+}
+footer .apoiocliente {
   padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+footer .apoiocliente .lista_cliente {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+footer .apoiocliente .lista_cliente li {
+  cursor: pointer;
 }/*# sourceMappingURL=template.css.map */

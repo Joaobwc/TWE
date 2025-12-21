@@ -96,19 +96,34 @@
 
     <!--4º andar-->
     <div id="quarto_andar">
-        <h2>MAIS SIXT</h2>
+        <h1>MAIS SIXT</h1>
         <div id="caixas_quarto_andar">
             <div id="sixt_empresas">
-                <h3>SIXT EMPRESAS</h3>
-                <span>Verifique os benefícios para clientes corporativos</span>
+                <ul>
+                    <li>
+                        <h3>SIXT EMPRESAS</h3>
+                    </li>
+                    <li><span>Verifique os benefícios para clientes corporativos</span></li>
+                    <li><button>Saber mais</button></li>
+                </ul>
             </div>
             <div id="subscrição_automóvel">
-                <h3>SUBSCRIÇÃO AUTOMÓVEL SIXT+</h3>
-                <span>A forma mais flexível de ter um carro, sem comprar ou fazer um leasing</span>
+                <ul>
+                    <li>
+                        <h3>SUBSCRIÇÃO AUTOMÓVEL SIXT+</h3>
+                    </li>
+                    <li> <span>A forma mais flexível de ter um carro, sem comprar ou fazer um leasing</span> </li>
+                    <li><button>Saber mais</button></li>
+                </ul>
             </div>
-            <div id="SIXT RIDE">
-                <h3>SIXT RIDE</h3>
-                <span>Descubra o serviço de boleia ideal para a sua viagem</span>
+            <div id="SIXT_RIDE">
+                <ul>
+                    <li>
+                        <h3>SIXT RIDE</h3>
+                    </li>
+                    <li><span>Descubra o serviço de boleia ideal para a sua viagem</span></li>
+                    <li><button>Saber mais</button></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -136,11 +151,15 @@
                 empresa com a maior frota de veículos Premium na sua frota.
             </span>
         </div>
-        <button id="botao1">Aeroportos de Portugal</button>
-        <button id="botao2">Balcões em Portugal</button>
-        <button id="botao3">Balcões em Aeroportos</button>
-        <button id="botao4">Ao redor do mundo</button>
-
+        <div id="botoes">
+            <ul id="lista_aeroportos">
+                <li><button id="btn_aeroporto">Aeroportos de Portugal</button></li>
+                <li><button id="btn_balcoes1">Balcões em Portugal</button></li>
+                <li><button id="btn_balcoes2">Balcões em Aeroportos</button></li>
+                <li><button id="btn_mundo">Ao redor do mundo</button></li>
+            </ul>
+            <div id="conteudo_btn"></div>
+        </div>
     </div>
 
 
@@ -150,16 +169,18 @@
     <footer class="footer">
         <div class="primeira_linha">
             <!--Simbolo Sixt-->
-            <svg viewBox="0 0 1000 415" xmlns="http://www.w3.org/2000/svg" width="50" height="50">
-                <path
-                    d="M1000,64.3486862v84.5219345h-95.2709351v252.7862091h-99.5255127V148.8706207h-74.5170898 l-65.0908813,92.5158997l127.5218506,160.2667694H669.3632202l-69.3630371-94.046936l-72.9190063,94.046936l-213.0421143,0.00354 V190.5054321h97.5005188v203.3267822l125.5004578-152.445694l-51.6677246-63.997345 c7.6235046-2.5435333,16.0619202-5.8243561,23.2832642-8.8723755 c23.7313232-10.0188751,44.5698853-25.2941437,63.2211914-40.5835037l28.1234131,40.1813431l75.8929443-103.7659531H1000z M134.3661499,410c97.6028442-0.440979,161.247345-30.2647705,161.247345-110.5075073 c0-143.5592499-199.9646301-82.3382568-199.9646301-138.7579498c0-19.3815918,21.1101761-27.1850281,52.5779114-27.1850281 c38.5479431,0,88.2718964,12.9645538,126.8304138,25.4528809v-81.449234 C243.035614,68.3632965,197.4109497,57.910511,147.9374847,57.910511c-111.4317169,0-147.8100891,52.4192009-147.937088,109.1599121 c-0.3210258,144.0284271,196.6414948,82.6945648,196.6414948,138.6450653c0,18.8383179-20.8843994,27.3014221-62.6779022,27.3331909 c-41.137352,0-85.1145477-9.9836121-130.2947083-24.8884583v81.4316101C28.4518681,399.6565552,67.6136551,410,134.3661499,410"
-                    fill="currentColor">
-                </path>
-                <path id="til"
-                    d="M392.2088318,78.2566071c-22.76474,2.9633179-53.3857727,2.9492111-78.1648254,2.7375565 v81.8302383h46.2702332c63.235321,0,216.3617249-13.6207428,262.1486511-162.8244019h-97.69104 C495.9676514,56.7865753,446.7869873,71.2751541,392.2088318,78.2566071"
-                    fill="currentColor">
-                </path>
-            </svg>
+            <span class="simbolo_sixt">
+                <svg viewBox="0 0 1000 415" xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+                    <path
+                        d="M1000,64.3486862v84.5219345h-95.2709351v252.7862091h-99.5255127V148.8706207h-74.5170898 l-65.0908813,92.5158997l127.5218506,160.2667694H669.3632202l-69.3630371-94.046936l-72.9190063,94.046936l-213.0421143,0.00354 V190.5054321h97.5005188v203.3267822l125.5004578-152.445694l-51.6677246-63.997345 c7.6235046-2.5435333,16.0619202-5.8243561,23.2832642-8.8723755 c23.7313232-10.0188751,44.5698853-25.2941437,63.2211914-40.5835037l28.1234131,40.1813431l75.8929443-103.7659531H1000z M134.3661499,410c97.6028442-0.440979,161.247345-30.2647705,161.247345-110.5075073 c0-143.5592499-199.9646301-82.3382568-199.9646301-138.7579498c0-19.3815918,21.1101761-27.1850281,52.5779114-27.1850281 c38.5479431,0,88.2718964,12.9645538,126.8304138,25.4528809v-81.449234 C243.035614,68.3632965,197.4109497,57.910511,147.9374847,57.910511c-111.4317169,0-147.8100891,52.4192009-147.937088,109.1599121 c-0.3210258,144.0284271,196.6414948,82.6945648,196.6414948,138.6450653c0,18.8383179-20.8843994,27.3014221-62.6779022,27.3331909 c-41.137352,0-85.1145477-9.9836121-130.2947083-24.8884583v81.4316101C28.4518681,399.6565552,67.6136551,410,134.3661499,410"
+                        fill="currentColor">
+                    </path>
+                    <path id="til"
+                        d="M392.2088318,78.2566071c-22.76474,2.9633179-53.3857727,2.9492111-78.1648254,2.7375565 v81.8302383h46.2702332c63.235321,0,216.3617249-13.6207428,262.1486511-162.8244019h-97.69104 C495.9676514,56.7865753,446.7869873,71.2751541,392.2088318,78.2566071"
+                        fill="currentColor">
+                    </path>
+                </svg>
+            </span>
             <div class="redes">
                 <ul class="social">
                     <li>
@@ -210,39 +231,41 @@
             </div>
         </div>
         <div class="links">
-            <div class="coluna1">
-                <h3>Os nossos produtos</h3>
-                <ul>
-                    <li>Aluguer de viaturas</li>
-                    <li>Aluguer de carrinhas comerciais</li>
-                    <li>As nossas localizações</li>
-                    <li>SIXT Ride</li>
-                    <li>Registar o meu negócio</li>
-                </ul>
-            </div>
-            <div class="coluna2">
-                <h3>Ajuda e mais</h3>
-                <ul>
-                    <li>Informações de aluger</li>
-                    <li>Termos e Condições</li>
-                    <li>Grupo SIXT</li>
-                    <li>Responsabilidade corporativa</li>
-                    <li>Código de ética e Conduta</li>
-                    <li>Plano de Prevenção de Riscos e Corrupção</li>
-                    <li>Canal de Denúncia</li>
-                    <li>Via Verde</li>
-                </ul>
-            </div>
+            <ul id="coluna1">
+                <li>
+                    <h3>Os nossos produtos</h3>
+                </li>
+                <li>Aluguer de viaturas</li>
+                <li>Aluguer de carrinhas comerciais</li>
+                <li>As nossas localizações</li>
+                <li>SIXT Ride</li>
+                <li>Registar o meu negócio</li>
+            </ul>
+
+            <ul id="coluna2">
+                <li>
+                    <h3>Ajuda e mais</h3>
+                </li>
+                <li>Informações de aluger</li>
+                <li>Termos e Condições</li>
+                <li>Grupo SIXT</li>
+                <li>Responsabilidade corporativa</li>
+                <li>Código de ética e Conduta</li>
+                <li>Plano de Prevenção de Riscos e Corrupção</li>
+                <li>Canal de Denúncia</li>
+                <li>Via Verde</li>
+            </ul>
+
             <div class="coluna3">
                 <ul></ul>
             </div>
         </div>
         <div class="aplicacoes">
-            <span>appstore</span>
-            <span>googleplay</span>
+            <div id="app_store"><img src="app_store_black_en.svg" alt=""></div>
+            <div id="google_play"><img src="google_play_en.svg" alt=""></div>
         </div>
         <div class="final_footer">
-            <span>livro de reclamacoes</span>
+            <div id="livro_reclamações"><img src="livro_reclamações.png" alt=""></div>
             <div class="apoiocliente">
                 <ul class="lista_cliente">
                     <li>Contatos</li>
@@ -255,9 +278,11 @@
                     <li>Configurações das cookies</li>
                     <li>Acessibilidade</li>
                 </ul>
+                <div id="sixt">© Sixt 2025</div>
             </div>
         </div>
     </footer>
+    <script src="template.js"></script>
 </body>
 
 </html>
