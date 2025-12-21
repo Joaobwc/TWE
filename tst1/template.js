@@ -6,6 +6,7 @@ const btnDevolucao = document.getElementById("btnDevolucao");
 const dataDevolucao = document.getElementById("dataDevolucao");
 const dataRecolha = document.getElementById("dataRecolha");
 const btnMostarVeiculos = document.getElementById("btnMostarVeiculos");
+<<<<<<< HEAD
 const lista_aeroporto = document.getElementById("lista_aeroportos");
 const conteudo_btn = document.getElementById("conteudo_btn")
 const btnAeroporto = document.getElementById("btn_aeroporto");
@@ -17,10 +18,19 @@ const btnMundo = document.getElementById("btn_mundo");
 //Sem funções anónimas
 
 //btnMostarVeiculos.addEventListener("click",);
+=======
+
+
+//Event listners
+//Sem funções anónimas
+btnMostarVeiculos.addEventListener("click",); 
+
+>>>>>>> 53c23a9caf76f67b1be287382290a5df9ebfc241
 
 //Com funções anónimas
 
 
+<<<<<<< HEAD
 //Funções 
 
 
@@ -73,3 +83,6 @@ if (btnMundo) {
         `
     });
 }
+=======
+//Funções 
+>>>>>>> 53c23a9caf76f67b1be287382290a5df9ebfc241
