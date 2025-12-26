@@ -6,7 +6,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 .div1 {
@@ -22,7 +21,7 @@
   grid-template-rows: 50px;
   grid-template-columns: 0.7fr 4fr 0.7fr;
   height: 700px;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(porshe_vp_100.png);
+  background-image: url(porshe_vp_100.png);
   background-size: cover;
   background-position: center;
 }
@@ -53,61 +52,41 @@
   background-color: white;
   max-width: 100%;
   height: 17vh;
-  border-radius: 1rem;
-  top: 50px;
-  position: absolute;
-  z-index: 1000;
-  /* 1. Define o tamanho */
-  width: 90%;
-  /* Ocupa 90% da largura em telemóveis */
-  max-width: 800px;
-  /* Mas nunca passa de 800px em Desktop */
-  /* 2. Cria o "trilho" para centrar */
-  left: 0;
-  right: 0;
-  /* 3. Centra automaticamente no espaço disponível */
-  margin-left: auto;
-  margin-right: auto;
+  border-radius: 1vw;
+  grid-row: 2/2;
+  grid-column: 2/3;
 }
 
-.div3 {
+.texto {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   height: 20vh;
   max-width: 100%;
   background-color: #FF5000;
 }
 
-.div4 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  -moz-column-gap: 80px;
-       column-gap: 80px;
-  height: 20vh;
-}
-
-.div .primeiro_principal .principal_c1 {
+.primeiro_principal .principal_c1 {
   display: flex;
 }
 
 #quarto_andar {
   background-color: rgb(230, 230, 230);
+  overflow: hidden;
 }
 #quarto_andar h1 {
-  padding-top: 50px;
+  padding-top: 40px;
   text-align: center;
 }
-#quarto_andar #caixas_quarto_andar {
+#quarto_andar #carrossel_quarto_andar {
   display: flex;
-  justify-content: center;
-  padding: 50px;
-  gap: 40px;
+  gap: 10px;
+  flex-wrap: nowrap;
+  width: 100%;
+  transition: transform 0.4s ease;
 }
-#quarto_andar #sixt_empresas {
+#quarto_andar #carrossel_quarto_andar #sixt_empresas {
+  flex: 0 0 82vw;
   cursor: pointer;
   text-align: center;
   border-radius: 15px;
@@ -115,13 +94,14 @@
   color: white;
   background-image: url(homem_com_mercedes.png);
   background-size: cover;
-  height: 700px;
-  width: 480px;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex: 0 0 100%;
 }
-#quarto_andar #sixt_empresas ul {
+#quarto_andar #carrossel_quarto_andar #sixt_empresas ul {
   list-style: none;
 }
-#quarto_andar #sixt_empresas ul button {
+#quarto_andar #carrossel_quarto_andar #sixt_empresas ul button {
   align-items: center;
   color: white;
   border-color: white;
@@ -131,13 +111,14 @@
   background-color: transparent;
   cursor: pointer;
 }
-#quarto_andar #sixt_empresas ul h3 {
+#quarto_andar #carrossel_quarto_andar #sixt_empresas ul h3 {
   padding-top: 60px;
 }
-#quarto_andar #sixt_empresas ul li {
+#quarto_andar #carrossel_quarto_andar #sixt_empresas ul li {
   padding: 10px;
 }
-#quarto_andar #subscrição_automóvel {
+#quarto_andar #carrossel_quarto_andar #subscrição_automóvel {
+  flex: 0 0 480px;
   cursor: pointer;
   text-align: center;
   border-radius: 15px;
@@ -145,13 +126,16 @@
   color: white;
   background-image: url(bmw.png);
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 550px;
   height: 700px;
   width: 480px;
 }
-#quarto_andar #subscrição_automóvel ul {
+#quarto_andar #carrossel_quarto_andar #subscrição_automóvel ul {
   list-style: none;
 }
-#quarto_andar #subscrição_automóvel ul button {
+#quarto_andar #carrossel_quarto_andar #subscrição_automóvel ul button {
   align-items: center;
   color: white;
   border-color: white;
@@ -161,13 +145,14 @@
   background-color: transparent;
   cursor: pointer;
 }
-#quarto_andar #subscrição_automóvel ul h3 {
+#quarto_andar #carrossel_quarto_andar #subscrição_automóvel ul h3 {
   padding-top: 60px;
 }
-#quarto_andar #subscrição_automóvel ul li {
+#quarto_andar #carrossel_quarto_andar #subscrição_automóvel ul li {
   padding: 10px;
 }
-#quarto_andar #SIXT_RIDE {
+#quarto_andar #carrossel_quarto_andar #SIXT_RIDE {
+  flex: 0 0 480px;
   cursor: pointer;
   text-align: center;
   border-radius: 15px;
@@ -175,13 +160,16 @@
   color: white;
   background-image: url(mulher.png);
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 550px;
   height: 700px;
   width: 480px;
 }
-#quarto_andar #SIXT_RIDE ul {
+#quarto_andar #carrossel_quarto_andar #SIXT_RIDE ul {
   list-style: none;
 }
-#quarto_andar #SIXT_RIDE ul button {
+#quarto_andar #carrossel_quarto_andar #SIXT_RIDE ul button {
   align-items: center;
   color: white;
   border-color: white;
@@ -191,11 +179,16 @@
   background-color: transparent;
   cursor: pointer;
 }
-#quarto_andar #SIXT_RIDE ul h3 {
+#quarto_andar #carrossel_quarto_andar #SIXT_RIDE ul h3 {
   padding-top: 60px;
 }
-#quarto_andar #SIXT_RIDE ul li {
+#quarto_andar #carrossel_quarto_andar #SIXT_RIDE ul li {
   padding: 10px;
+}
+#quarto_andar .carrossel_btn #anterior,
+#quarto_andar .carrossel_btn #seguinte {
+  height: 60px;
+  width: 60px;
 }
 
 #quinto_andar {
@@ -223,22 +216,20 @@
 }
 
 #ultimo_andar {
-  display: flex;
   padding-top: 100px;
   padding-bottom: 100px;
   gap: 40px;
 }
 #ultimo_andar #texto_ultimo_andar {
-  width: 26%;
+  width: 100%;
 }
 #ultimo_andar #texto_ultimo_andar h2 {
   padding-bottom: 20px;
 }
 #ultimo_andar #botoes #lista_aeroportos {
-  padding-left: 40px;
-  display: flex;
   gap: 50px;
   list-style: none;
+  padding-top: 30px;
 }
 #ultimo_andar #botoes #lista_aeroportos #btn_aeroporto,
 #ultimo_andar #botoes #lista_aeroportos #btn_balcoes1,
@@ -265,20 +256,31 @@
   color: white;
 }
 #ultimo_andar #botoes #conteudo_btn {
-  padding-left: 90px;
-  padding-top: 50px;
+  padding-left: 40px;
+  padding-top: 60px;
+  width: 100%;
+  gap: 40px;
   display: flex;
-  gap: 45px;
 }
-#ultimo_andar #botoes #conteudo_btn .coluna p {
-  gap: 60px;
-  padding: 3px;
-  font-size: 16px;
-}
-
-.lista-grid {
+#ultimo_andar #botoes #conteudo_btn #aeroportosPT {
+  grid-area: menu;
+  grid-column: 1/span 2;
   display: flex;
-  color: red;
+  gap: 20px;
+  list-style: none;
+}
+#ultimo_andar #botoes #conteudo_btn #aeroportosPT li {
+  cursor: pointer;
+  font-weight: bold;
+}
+#ultimo_andar #botoes #conteudo_btn .coluna ul {
+  list-style: none;
+  padding: 0;
+}
+#ultimo_andar #botoes #conteudo_btn .coluna ul li {
+  padding: 5px 0;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 footer {
@@ -306,7 +308,7 @@ footer .primeira_linha .redes .social {
   list-style: none;
 }
 footer .links {
-  display: flex;
+  display: block;
   color: white;
   justify-content: space-between;
 }
@@ -320,9 +322,15 @@ footer .links #coluna1 li {
   color: white;
   gap: 100px;
   cursor: pointer;
+  font-weight: bold;
 }
 footer .links #coluna1 li h3 {
   cursor: auto;
+  color: rgb(168, 168, 168);
+  font-weight: normal;
+}
+footer .links #coluna2 {
+  padding-top: 30px;
 }
 footer .links #coluna2 li {
   margin-bottom: 13px;
@@ -330,9 +338,12 @@ footer .links #coluna2 li {
   color: white;
   gap: 100px;
   cursor: pointer;
+  font-weight: bold;
 }
 footer .links #coluna2 li h3 {
   cursor: auto;
+  color: rgb(168, 168, 168);
+  font-weight: normal;
 }
 footer .aplicacoes {
   padding-top: 30px;
@@ -355,12 +366,59 @@ footer .apoiocliente {
   padding-top: 30px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 footer .apoiocliente .lista_cliente {
   display: flex;
   list-style: none;
   gap: 20px;
+  flex-wrap: wrap;
 }
 footer .apoiocliente .lista_cliente li {
   cursor: pointer;
+}
+footer .apoiocliente #sixt {
+  padding-top: 20px;
+  color: rgb(168, 168, 168);
+  font-weight: normal;
+}
+
+@media screen and (min-width: 768px) {
+  #quarto_andar #carrossel_quarto_andar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-items: center;
+    transform: none !important;
+  }
+  #quarto_andar #carrossel_quarto_andar #sixt_empresas,
+  #quarto_andar #carrossel_quarto_andar #subscrição_automóvel,
+  #quarto_andar #carrossel_quarto_andar #SIXT_RIDE {
+    width: 100%;
+    max-width: 480px;
+    height: 700px;
+  }
+  #quarto_andar .carrossel_btn #anterior,
+  #quarto_andar .carrossel_btn #seguinte {
+    visibility: hidden;
+  }
+  #ultimo_andar {
+    display: flex;
+  }
+  #ultimo_andar #texto_ultimo_andar {
+    width: 20%;
+  }
+  #ultimo_andar #botoes #lista_aeroportos {
+    display: flex;
+    padding-top: 0;
+  }
+  footer .links {
+    display: flex;
+  }
+  footer .links #coluna2 {
+    padding-top: 0px;
+  }
+  footer .apoiocliente #sixt {
+    padding-top: 0;
+  }
 }/*# sourceMappingURL=template.css.map */
