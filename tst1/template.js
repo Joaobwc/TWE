@@ -55,7 +55,7 @@ function moverCarrossel(indice) {
 
     // Calculamos a largura de um card + o gap
     const larguraCard = cards[0].offsetWidth + 20;
-
+    i
     // Para mostrar sempre de 2 em 2, 
     // o deslocamento máximo não deve deixar o ecrã vazio.
     const deslocamento = indice * larguraCard;
@@ -77,14 +77,15 @@ if (btnAeroporto) {
 
         // Criando a lista com duas colunas
         conteudo_btn.innerHTML = `
-        <ul id=aeroportosPT>
-            <li>Açores Ponta Delgada Aeroporto</li>
-            <li>Faro Aeroporto</li>
-            <li>Lisboa Aeroporto</li>
-            <li>Madeira Aeroporto</li>
-            <li>Porto Aeroporto</li>
-        </ul>
-        <span><strong>SIXT em Portugal</strong></span>        
+        <div id="aeroportosPT">
+            <ul>
+                <li>Açores Ponta Delgada Aeroporto</li>
+                <li>Faro Aeroporto</li>
+                <li>Lisboa Aeroporto</li>
+                <li>Madeira Aeroporto</li>
+                <li>Porto Aeroporto</li>
+            </ul>
+        <span>SIXT em Portugal</span>        
             `;
     });
 }
@@ -118,16 +119,16 @@ if (btnBalcoes1) {
                     <li>Comporta-Carvalhal</li>
                     <li>Lisboa</li>
                     <li>Porto</li>
-                    <li>Sines</strong></li>
+                    <li>Sines</li>
                 </ul>
             </div>
 
             <div class="coluna">
                 <ul>
-                    <li>Faro</strong></strong></li>
-                    <li>Madalena</strong></li>
+                    <li>Faro</li>
+                    <li>Madalena<</li>
                     <li>Praia da Vitória</li>
-                    <li>Velas</strong></li>
+                    <li>Velas</li>
                 </ul>
             </div>
         </div>

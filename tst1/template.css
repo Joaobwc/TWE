@@ -308,18 +308,13 @@
   padding-top: 60px;
   width: 100%;
   gap: 40px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
-#ultimo_andar #botoes #conteudo_btn #aeroportosPT {
-  grid-area: menu;
-  grid-column: 1/span 2;
+#ultimo_andar #botoes #conteudo_btn #aeroportosPT ul {
   display: flex;
-  gap: 20px;
   list-style: none;
-}
-#ultimo_andar #botoes #conteudo_btn #aeroportosPT li {
-  cursor: pointer;
-  font-weight: bold;
+  gap: 20px;
 }
 #ultimo_andar #botoes #conteudo_btn .coluna ul {
   list-style: none;
@@ -431,6 +426,14 @@ footer .apoiocliente #sixt {
   font-weight: normal;
 }
 
+@media screen and (min-width: 640px) {
+  #ultimo_andar #botoes #lista_aeroportos {
+    gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+  }
+}
 @media screen and (min-width: 768px) {
   #quarto_andar {
     width: 100%;
@@ -503,8 +506,10 @@ footer .apoiocliente #sixt {
   #ultimo_andar #texto_ultimo_andar {
     width: 20%;
   }
+  #ultimo_andar #botoes {
+    width: 100%;
+  }
   #ultimo_andar #botoes #lista_aeroportos {
-    display: flex;
     padding-top: 0;
   }
   footer .links {
