@@ -13,10 +13,8 @@ const btnBalcoes1 = document.getElementById("btn_balcoes1");
 const btnBalcoes2 = document.getElementById("btn_balcoes2");
 const btnMundo = document.getElementById("btn_mundo");
 const carrosselTrilho = document.getElementById("carrossel_quarto_andar");
-const btnSeguinte = document.getElementById("seguinte");
-const btnAnterior = document.getElementById("anterior");
+const botoesCarrossel = document.querySelectorAll('.carrossel_btn button');
 let posicaoAtual = 0; // Começa na posição zero
-const larguraMovimento = 520;
 //Event listners
 //Sem funções anónimas
 
@@ -28,25 +26,46 @@ const larguraMovimento = 520;
 
 //4º Andar
 
-if (btnSeguinte && btnAnterior && carrosselTrilho) {
-    btnSeguinte.addEventListener("click", () => {
-        // Calcula o limite máximo de deslize
-        const numCards = carrosselTrilho.children.length;
-        const limite = (numCards - 1) * larguraMovimento;
+function moverParaSlide(indice) {
+    if (!carrosselTrilho || carrosselTrilho.children.length === 0) return;
 
-        // Só desliza se não tiver chegado ao fim
-        if (Math.abs(posicaoAtual) < limite) {
-            posicaoAtual -= larguraMovimento;
-            carrosselTrilho.style.transform = `translateX(${posicaoAtual}px)`;
-        }
+    // Calcula a largura de um card + o gap de 20px definido no CSS
+    const larguraCard = carrosselTrilho.children[0].offsetWidth + 20;
+
+    // Aplica o movimento negativo para deslizar para a esquerda
+    const deslocamento = indice * larguraCard;
+    carrosselTrilho.style.transform = `translateX(-${deslocamento}px)`;
+
+    // Atualização visual dos pontos (dots) usando a tua variável botoesCarrossel
+    botoesCarrossel.forEach((dot, i) => {
+        dot.style.backgroundColor = (i === indice) ? "black" : "#bbb";
     });
+}
 
-    btnAnterior.addEventListener("click", () => {
-        // Só desliza para a direita se não estiver no início (0)
-        if (posicaoAtual < 0) {
-            posicaoAtual += larguraMovimento;
-            carrosselTrilho.style.transform = `translateX(${posicaoAtual}px)`;
-        }
+// O loop forEach já existente ligará corretamente os eventos
+botoesCarrossel.forEach((botao, indice) => {
+    botao.addEventListener('click', () => {
+        moverParaSlide(indice);
+    });
+});
+
+function moverCarrossel(indice) {
+    const cards = carrosselTrilho.children;
+    if (cards.length === 0) return;
+
+    // Calculamos a largura de um card + o gap
+    const larguraCard = cards[0].offsetWidth + 20;
+
+    // Para mostrar sempre de 2 em 2, 
+    // o deslocamento máximo não deve deixar o ecrã vazio.
+    const deslocamento = indice * larguraCard;
+
+    carrosselTrilho.style.transform = `translateX(-${deslocamento}px)`;
+
+    // Atualização visual dos botões
+    const dots = document.querySelectorAll('.carrossel_btn button');
+    dots.forEach((dot, i) => {
+        dot.style.backgroundColor = (i === indice) ? "#FF5000" : "#bbb";
     });
 }
 //5º Andar - Botões
