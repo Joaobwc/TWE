@@ -89,9 +89,16 @@ if (btnAeroporto) {
             `;
     });
 }
+function gerirMenu() {
+    const menu = document.getElementById("submenu_lateral");
 
+    if (menu.style.width === "100%") {
+        menu.style.width = "0"; // Se estiver aberto, fecha
+    } else {
+        menu.style.width = "100%"; // Se estiver fechado, abre
+    }
+}
 // Ao clicar no botão "Balcões em Portugal" aparece o seguinte texto
-
 if (btnBalcoes1) {
     btnBalcoes1.addEventListener("click", function () {
         conteudo_btn.innerHTML = `

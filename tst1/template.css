@@ -1,19 +1,31 @@
 @charset "UTF-8";
+
 @font-face {
   font-family: "Helvetica";
   src: url("/Font/HelveticaNowDisplay.otf");
   font-weight: 700;
   font-size: normal;
 }
+
 @font-face {
   font-family: "Roboto";
   src: url("/Font/Roboto-Black.ttf");
   font-weight: 100;
   font-style: normal;
 }
+
+.til {
+  color: #FF5000;
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 .div1 {
@@ -42,8 +54,46 @@
   grid-column: 2/3;
 }
 
+.header #submenu_conteudo {
+  padding: 20px;
+  text-align: left;
+  display: block;
+}
+
+.header #submenu_conteudo #submenu-header {
+  gap: 15px;
+  display: flex;
+}
+
+.header #lista_submenu {
+  list-style: none;
+  display: block;
+}
+
+.header #lista_submenu li {
+  padding-top: 20px;
+}
+
 .lista {
   display: flex;
+}
+
+.lista #menu-icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+#submenu_lateral {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.4s;
 }
 
 .lista li {
@@ -59,48 +109,16 @@
 
 .nav_var {
   background-color: white;
-  width: 73%;
+  width: 95%;
   height: 17vh;
   border-radius: 1rem;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   top: 0;
-  margin: -655px auto 0 auto;
+  margin: -955px auto 0 auto;
   position: sticky;
-  z-index: 1000;
 }
 
-.header {
-  background-color: transparent;
-  height: 5vh;
-  grid-row: 1/1;
-  grid-column: 2/3;
-}
-
-.lista {
-  display: flex;
-}
-
-.lista li {
-  text-align: center;
-  color: white;
-  list-style: none;
-  padding: 1%;
-}
-
-.direita {
-  margin-left: auto;
-}
-
-.nav_var {
-  background-color: white;
-  max-width: 100%;
-  height: 17vh;
-  border-radius: 1vw;
-  grid-row: 2/2;
-  grid-column: 2/3;
-}
-
-.texto {
+.div3 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,7 +126,82 @@
   height: 26vh;
   max-width: 100%;
   background-color: #FF5000;
-  margin-top: 465px;
+  text-align: center;
+  margin-top: 700px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+
+.div4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  -moz-column-gap: 80px;
+  column-gap: 80px;
+  height: 50vh;
+}
+
+.gallery {
+  width: 95%;
+  margin: 0 auto 75px auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  -moz-column-gap: 0.5vw;
+  column-gap: 0.5vw;
+  row-gap: 1.5vh;
+}
+
+.gallery .img-gallery {
+  width: 100%;
+  height: 87vh;
+  background-position: center;
+  background-size: cover;
+  border-radius: 2%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.gallery .img-gallery ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+}
+
+.gallery .img-gallery ul button {
+  align-items: center;
+  color: white;
+  border-color: white;
+  height: 30px;
+  width: 120px;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.gallery #img_mercedes {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(conteiner_mercedes.png);
+  grid-column: 1/1;
+  grid-row: 1/2;
+}
+
+.gallery #img_smart {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(conteiner_smart.png);
+  grid-column: 1/1;
+  grid-row: 2/3;
+}
+
+.gallery #img_porche {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(conteiner_porshe.png);
+  grid-column: 1/1;
+  grid-row: 3/3;
 }
 
 .primeiro_principal .principal_c1 {
@@ -119,11 +212,13 @@
   background-color: rgb(230, 230, 230);
   overflow: hidden;
 }
+
 #quarto_andar h1 {
   padding-top: 40px;
   padding-bottom: 20px;
   text-align: center;
 }
+
 #quarto_andar #carrossel_quarto_andar {
   display: flex;
   padding-left: 15px;
@@ -132,6 +227,7 @@
   width: 100%;
   transition: transform 0.4s ease;
 }
+
 #quarto_andar #carrossel_quarto_andar #sixt_empresas {
   cursor: pointer;
   text-align: center;
@@ -143,9 +239,11 @@
   height: 930px;
   flex: 0 0 95%;
 }
+
 #quarto_andar #carrossel_quarto_andar #sixt_empresas ul {
   list-style: none;
 }
+
 #quarto_andar #carrossel_quarto_andar #sixt_empresas ul button {
   align-items: center;
   color: white;
@@ -156,12 +254,15 @@
   background-color: transparent;
   cursor: pointer;
 }
+
 #quarto_andar #carrossel_quarto_andar #sixt_empresas ul h3 {
   padding-top: 60px;
 }
+
 #quarto_andar #carrossel_quarto_andar #sixt_empresas ul li {
   padding: 10px;
 }
+
 #quarto_andar #carrossel_quarto_andar #subscrição_automóvel {
   cursor: pointer;
   text-align: center;
@@ -175,9 +276,11 @@
   height: 930px;
   flex: 0 0 95%;
 }
+
 #quarto_andar #carrossel_quarto_andar #subscrição_automóvel ul {
   list-style: none;
 }
+
 #quarto_andar #carrossel_quarto_andar #subscrição_automóvel ul button {
   align-items: center;
   color: white;
@@ -188,12 +291,15 @@
   background-color: transparent;
   cursor: pointer;
 }
+
 #quarto_andar #carrossel_quarto_andar #subscrição_automóvel ul h3 {
   padding-top: 60px;
 }
+
 #quarto_andar #carrossel_quarto_andar #subscrição_automóvel ul li {
   padding: 10px;
 }
+
 #quarto_andar #carrossel_quarto_andar #SIXT_RIDE {
   cursor: pointer;
   text-align: center;
@@ -207,9 +313,11 @@
   height: 930px;
   flex: 0 0 95%;
 }
+
 #quarto_andar #carrossel_quarto_andar #SIXT_RIDE ul {
   list-style: none;
 }
+
 #quarto_andar #carrossel_quarto_andar #SIXT_RIDE ul button {
   align-items: center;
   color: white;
@@ -220,17 +328,21 @@
   background-color: transparent;
   cursor: pointer;
 }
+
 #quarto_andar #carrossel_quarto_andar #SIXT_RIDE ul h3 {
   padding-top: 60px;
 }
+
 #quarto_andar #carrossel_quarto_andar #SIXT_RIDE ul li {
   padding: 10px;
 }
+
 #quarto_andar .carrossel_btn {
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
 }
+
 #quarto_andar .carrossel_btn #primeira,
 #quarto_andar .carrossel_btn #segunda,
 #quarto_andar .carrossel_btn #terceira {
@@ -252,12 +364,14 @@
   align-items: center;
   justify-content: center;
 }
+
 #quinto_andar span {
   max-width: 1450px;
   display: block;
   font-size: 55px;
   text-align: center;
 }
+
 #quinto_andar span #yasmin {
   padding-top: 30px;
   font-size: 27px;
@@ -268,17 +382,21 @@
   padding-bottom: 100px;
   gap: 40px;
 }
+
 #ultimo_andar #texto_ultimo_andar {
   width: 100%;
 }
+
 #ultimo_andar #texto_ultimo_andar h2 {
   padding-bottom: 20px;
 }
+
 #ultimo_andar #botoes #lista_aeroportos {
   gap: 50px;
   list-style: none;
   padding-top: 30px;
 }
+
 #ultimo_andar #botoes #lista_aeroportos #btn_aeroporto,
 #ultimo_andar #botoes #lista_aeroportos #btn_balcoes1,
 #ultimo_andar #botoes #lista_aeroportos #btn_balcoes2,
@@ -290,12 +408,14 @@
   border-radius: 15px;
   cursor: pointer;
 }
+
 #ultimo_andar #botoes #lista_aeroportos #btn_aeroporto:hover,
 #ultimo_andar #botoes #lista_aeroportos #btn_balcoes1:hover,
 #ultimo_andar #botoes #lista_aeroportos #btn_balcoes2:hover,
 #ultimo_andar #botoes #lista_aeroportos #btn_mundo:hover {
   background-color: rgb(170, 170, 170);
 }
+
 #ultimo_andar #botoes #lista_aeroportos #btn_aeroporto:active,
 #ultimo_andar #botoes #lista_aeroportos #btn_balcoes1:active,
 #ultimo_andar #botoes #lista_aeroportos #btn_balcoes2:active,
@@ -303,6 +423,7 @@
   background-color: rgb(26, 26, 26);
   color: white;
 }
+
 #ultimo_andar #botoes #conteudo_btn {
   padding-left: 40px;
   padding-top: 60px;
@@ -311,15 +432,18 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
+
 #ultimo_andar #botoes #conteudo_btn #aeroportosPT ul {
   display: flex;
   list-style: none;
   gap: 20px;
 }
+
 #ultimo_andar #botoes #conteudo_btn .coluna ul {
   list-style: none;
   padding: 0;
 }
+
 #ultimo_andar #botoes #conteudo_btn .coluna ul li {
   padding: 5px 0;
   font-weight: bold;
@@ -331,35 +455,43 @@ footer {
   background-color: #1a1a1a;
   color: white;
 }
-footer .primeira_linha {
+
+footer #footer_conteudo {
+  padding: 15px;
+}
+
+footer #footer_conteudo .primeira_linha {
   display: flex;
   justify-content: space-between;
   height: 60px;
 }
-footer .primeira_linha .simbolo_sixt {
+
+footer #footer_conteudo .primeira_linha .simbolo_sixt {
   cursor: pointer;
 }
-footer .primeira_linha li {
+
+footer #footer_conteudo .primeira_linha li {
   cursor: pointer;
 }
-footer .primeira_linha #til2 {
-  color: rgb(255, 80, 0);
-}
-footer .primeira_linha .redes .social {
+
+footer #footer_conteudo .primeira_linha .redes .social {
   display: flex;
   gap: 15px;
   list-style: none;
 }
-footer .links {
+
+footer #footer_conteudo .links {
   display: block;
   color: white;
   justify-content: space-between;
 }
-footer .links .coluna3 {
+
+footer #footer_conteudo .links .coluna3 {
   width: 550px;
   justify-content: right;
 }
-footer .links #coluna1 li {
+
+footer #footer_conteudo .links #coluna1 li {
   margin-bottom: 13px;
   list-style: none;
   color: white;
@@ -367,15 +499,18 @@ footer .links #coluna1 li {
   cursor: pointer;
   font-weight: bold;
 }
-footer .links #coluna1 li h3 {
+
+footer #footer_conteudo .links #coluna1 li h3 {
   cursor: auto;
   color: rgb(168, 168, 168);
   font-weight: normal;
 }
-footer .links #coluna2 {
+
+footer #footer_conteudo .links #coluna2 {
   padding-top: 30px;
 }
-footer .links #coluna2 li {
+
+footer #footer_conteudo .links #coluna2 li {
   margin-bottom: 13px;
   list-style: none;
   color: white;
@@ -383,44 +518,54 @@ footer .links #coluna2 li {
   cursor: pointer;
   font-weight: bold;
 }
-footer .links #coluna2 li h3 {
+
+footer #footer_conteudo .links #coluna2 li h3 {
   cursor: auto;
   color: rgb(168, 168, 168);
   font-weight: normal;
 }
-footer .aplicacoes {
+
+footer #footer_conteudo .aplicacoes {
   padding-top: 30px;
   display: flex;
   gap: 10px;
 }
-footer .aplicacoes #app_store {
+
+footer #footer_conteudo .aplicacoes #app_store {
   cursor: pointer;
 }
-footer .aplicacoes #google_play {
+
+footer #footer_conteudo .aplicacoes #google_play {
   cursor: pointer;
 }
-footer .final_footer {
+
+footer #footer_conteudo .final_footer {
   padding-top: 30px;
 }
-footer .final_footer #livro_reclamações {
+
+footer #footer_conteudo .final_footer #livro_reclamações {
   cursor: pointer;
 }
-footer .apoiocliente {
+
+footer #footer_conteudo .apoiocliente {
   padding-top: 30px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-footer .apoiocliente .lista_cliente {
+
+footer #footer_conteudo .apoiocliente .lista_cliente {
   display: flex;
   list-style: none;
   gap: 20px;
   flex-wrap: wrap;
 }
-footer .apoiocliente .lista_cliente li {
+
+footer #footer_conteudo .apoiocliente .lista_cliente li {
   cursor: pointer;
 }
-footer .apoiocliente #sixt {
+
+footer #footer_conteudo .apoiocliente #sixt {
   padding-top: 20px;
   color: rgb(168, 168, 168);
   font-weight: normal;
@@ -434,18 +579,21 @@ footer .apoiocliente #sixt {
     display: flex;
   }
 }
+
 @media screen and (min-width: 768px) {
   #quarto_andar {
     width: 100%;
     overflow: hidden;
   }
+
   #quarto_andar #carrossel_quarto_andar {
     display: flex;
     flex-wrap: nowrap;
     gap: 20px;
     justify-content: flex-start;
-    width: 73%;
+    width: 75%;
   }
+
   #quarto_andar #carrossel_quarto_andar #sixt_empresas,
   #quarto_andar #carrossel_quarto_andar #subscrição_automóvel,
   #quarto_andar #carrossel_quarto_andar #SIXT_RIDE {
@@ -453,40 +601,47 @@ footer .apoiocliente #sixt {
     max-width: 360px;
     height: 500px;
   }
+
   #quarto_andar .carrossel_btn #terceira {
     visibility: hidden;
   }
-  #quarto_andar #ultimo_andar {
-    display: flex;
-  }
+
   #quarto_andar #ultimo_andar #texto_ultimo_andar {
     width: 20%;
   }
+
   #quarto_andar #ultimo_andar #botoes #lista_aeroportos {
     display: flex;
     padding-top: 0;
   }
+
   #quarto_andar footer .links {
     display: flex;
   }
+
   #quarto_andar footer .links #coluna2 {
     padding-top: 0px;
   }
+
   #quarto_andar footer .apoiocliente #sixt {
     padding-top: 0;
   }
 }
+
+/* Large devices such as laptops (1024px and up) */
 @media screen and (min-width: 1024px) {
   #quarto_andar #carrossel_quarto_andar {
     display: flex;
+    padding-left: 0;
     gap: 20px;
     justify-content: center;
-    width: 100%;
+    width: 75%;
     display: flex;
     flex-wrap: nowrap;
     margin: 0 auto;
     transform: none !important;
   }
+
   #quarto_andar #carrossel_quarto_andar #sixt_empresas,
   #quarto_andar #carrossel_quarto_andar #subscrição_automóvel,
   #quarto_andar #carrossel_quarto_andar #SIXT_RIDE {
@@ -495,30 +650,136 @@ footer .apoiocliente #sixt {
     max-width: 480px;
     height: 720px;
   }
+
   #quarto_andar .carrossel_btn #primeira,
   #quarto_andar .carrossel_btn #segunda,
   #quarto_andar .carrossel_btn #terceira {
     visibility: hidden;
   }
+
   #ultimo_andar {
     display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 60px 0;
   }
-  #ultimo_andar #texto_ultimo_andar {
+
+  #ultimo_andar #ultimo_andar_conteudo {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    gap: 50px;
+    /* Espaço entre o texto e a área dos botões */
+  }
+
+  #ultimo_andar #ultimo_andar_conteudo #texto_ultimo_andar {
     width: 20%;
   }
-  #ultimo_andar #botoes {
+
+  #ultimo_andar #ultimo_andar_conteudo #botoes {
     width: 100%;
   }
-  #ultimo_andar #botoes #lista_aeroportos {
+
+  #ultimo_andar #ultimo_andar_conteudo #botoes #lista_aeroportos {
     padding-top: 0;
   }
-  footer .links {
+
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  footer #footer_conteudo {
+    width: 75%;
+  }
+
+  footer #footer_conteudo .links {
     display: flex;
   }
-  footer .links #coluna2 {
+
+  footer #footer_conteudo .links #coluna2 {
     padding-top: 0px;
   }
-  footer .apoiocliente #sixt {
+
+  footer #footer_conteudo .apoiocliente #sixt {
     padding-top: 0;
   }
-}/*# sourceMappingURL=template.css.map */
+
+  .div2 {
+    height: 700px;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(porshe_vp_100.png);
+    grid-template-columns: 0.2fr 3.5fr 0.2fr;
+  }
+
+  .nav_var {
+    width: 88%;
+    margin: -650px auto 0 auto;
+  }
+
+  .div3 {
+    height: 30vh;
+    font-size: 1.9rem;
+    margin-top: 490px;
+    padding: 0 70px 0 70px;
+  }
+
+  .div4 {
+    height: 30vh;
+    padding: 0 70px 0 70px;
+  }
+
+  .gallery {
+    width: 88%;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery .img-gallery {
+    height: 50vh;
+  }
+
+  .gallery #img_mercedes {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+
+  .gallery #img_smart {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .gallery #img_porche {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .div2 {
+    grid-template-columns: 0.62fr 4fr 0.62fr;
+  }
+
+  .nav_var {
+    width: 75%;
+  }
+
+  .div3 {
+    height: 23vh;
+    font-size: 1.7rem;
+    margin-top: 450px;
+    padding: 0 70px 0 70px;
+  }
+
+  .div4 {
+    height: 23vh;
+    -moz-column-gap: 53px;
+    column-gap: 53px;
+    font-size: 1.3rem;
+  }
+
+  .gallery {
+    width: 75%;
+  }
+}
+
+/*# sourceMappingURL=template.css.map */
