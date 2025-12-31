@@ -21,6 +21,7 @@ $cor-principal: #FF5000;
 
 $fonte-texto: "Roboto", Arial, sans-serif;
 $fonte-titulo: "Helvetica", sans-serif;
+$fonte-secundaria: sans-serif;
 
 .til {
     color: $cor-principal;
@@ -100,23 +101,6 @@ body {
 .lista {
     display: flex;
 
-    #menu-icon {
-        font-size: 20px; // Tamanho icon, tamanho dos "traços"
-        cursor: pointer;
-        color: white;
-    }
-}
-
-#submenu_lateral {
-    height: 100%;
-    width: 0; // Width 0 para puder ser alterado com o JS
-    position: fixed; // O elemento fica "colado" na tela, sendo assim possível fazer scroll pela página sem fechar o menu
-    z-index: 100; // Posiciona por cima de tudo
-    top: 0;
-    left: 0;
-    background-color: white;
-    overflow-x: hidden;
-    transition: 0.4s;
 }
 
 .lista li {
@@ -124,6 +108,13 @@ body {
     color: white;
     list-style: none;
     padding: 1%;
+
+    //till
+    #til1{
+        color: $cor-principal;
+    }
+
+
 }
 
 .direita {
@@ -138,7 +129,7 @@ body {
 
     background-color: white;
     width: 95%;
-    height: 17vh;
+    height: 26vh;
     border-radius: 1rem;
 
 
@@ -149,6 +140,107 @@ body {
 
     margin: -955px auto 0 auto; // Top Right Bottom Left
     position: sticky;
+
+    //div dos veículos carros e carrinhas
+    .btnVeiculos{
+        display: flex;
+        padding: 1rem;
+        gap: 0.5rem;
+        //btn dos veículos carros e carrinhas
+        button{
+            width: 90px;
+            height: 35px;
+            border-radius: 1rem;
+            background-color:black;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+
+        }
+        
+        button:hover{
+            background-color: gray;
+        }
+
+
+    }
+    
+    
+
+    //formulário elemento pai, coloca na vertical
+    .form{
+        display: flex;
+        flex-direction: column;
+        padding: 1.3rem;
+        gap: 0.5rem;
+        font-family: sans-serif;
+
+        //Para que o #txtbox1 possa ocupar 100% do width dos pais
+        .linha, .grupo-input{
+           width: 100%;
+        }
+
+
+
+    
+        //Input Aeroporto, cidade ou endereço
+        #txtbox1{
+            width: 100%; 
+            height: 45px; 
+            border: none;
+            border-radius: 8px;
+            border-bottom: 1px solid #ccc;
+           
+
+        }
+        //Input Mostrar veículos
+        #btnMostarVeiculos{
+            width: 100%; 
+            height: 45px; 
+            border: none;
+            border-radius: 8px;
+            background-color: $cor-principal;
+            color: white;
+            font-size: 0; //esconder o texto do butão
+            cursor: pointer;
+
+            &:hover{
+                background-color: #b33800;
+                
+            }
+
+            &::after{
+                font-size: 1rem; //voltar com a fonte, visto que herda a 0 do pai
+                content:"Selecionar local de retirada";
+            }
+        }
+
+
+        //ocultar os butões para a resolução pequena
+        .btnHidden{
+            display: none;
+        }
+
+    }
+
+    //texto Aplicar a tarifa empresarial
+
+    .tarifa{
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-color: black;
+        text-underline-offset: 4px; //espaço entre a linha e o texto 
+        font-family: $fonte-secundaria;
+        font-weight: bold;
+        font-size: 0.8rem;
+        cursor: pointer;
+        
+    }
+
+    //correção da posição dos icons
+
+
 
 
 }
@@ -662,20 +754,62 @@ footer {
     }
 }
 
-@media screen and (min-width: 640px) {
-    #ultimo_andar {
-        #botoes {
-            #lista_aeroportos {
-                gap: 15px;
-                flex-wrap: wrap; // Quebra de linha 
-                width: 100%;
-                display: flex;
-            }
-        }
+
+
+
+
+
+//Media queries
+
+/* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 640px) {
+    //.lista li{
+        //colocar só icons c/ texto de Iniciar sessão
+
+    //}
+    //div3 com A aventura começa aqui.
+    .div3{
+        height: 28vh;
+        margin-top: 700px;
+        font-size: 1.4rem;
+        padding: 0 8px 0 8px;
     }
+    //div4 Textos Confiável..., Veículos...
+    .div4{
+
+        //falta tratar do gap confiavel mundialmente de +2000 estações
+        flex-wrap: nowrap;
+        gap: 30px;
+
+        height: 28vh;
+        text-align: left;
+        padding: 0 20px 0 20px;
+
+    }
+    .gallery .img-gallery{
+        height: 43vh;
+    }
+
 }
 
-@media screen and (min-width: 768px) {
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+        //.lista li{
+        //colocar só icons c/ texto de Iniciar sessão
+
+    //}
+    
+    .div3{
+        height: 30vh;
+        font-size: 1.5rem;
+        padding: 0 8px 0 8px;
+    }
+    
+    .gallery .img-gallery{
+        height: 50vh;
+    }
+
+
     #quarto_andar {
         width: 100%;
         overflow: hidden;
@@ -831,18 +965,76 @@ footer {
 
 
     }
-
-    .nav_var {
-        width: 88%;
+    .nav_var{
+        height: 30vh;
+        width: 88%;   
         margin: -650px auto 0 auto; // Top Right Bottom Left
+
+        //Input Aeroporto, cidade ou endereço
+        .form {
+            #txtbox1{
+                border: 1px solid #ccc;
+                border-radius: 0.8rem;
+                padding: 10px;
+                
+
+            }
+
+            .btnHidden{
+                display: flex;//desocultar os butoẽs
+                align-items: center;
+                white-space: nowrap;
+                }
+
+            
+
+            //colocar os inputs por linhas
+            .linha{
+                display: flex;
+                flex-direction: row;
+                gap: 0.5rem;
+                align-items: flex-end;// alinhar o texto com checkbox e colocar a label e check no fundo 
+            }
+
+            
+            //inputs da data de recolha e devolução
+            #dataDevolucao, #dataRecolha{
+                width: 100%; 
+                height: 45px; 
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                border-bottom: 1px solid #ccc;
+                padding: 0.5rem;//padding para dd/mm/aaaa
+                
+                
+            }
+
+
+            #btnMostarVeiculos{
+                width: 500px;
+                font-size: 1rem;//reaparecer com o conteudo
+
+
+                &::after{
+                    content: none; //reteriar o content anterior
+                    
+                }
+            }
+        }
+        //colocar a tarifa no canto inferior esquerdo
+        .tarifa{
+            padding-left:1.5rem; //Top Right Botton Left
+            text-align: left;
+        }
+    
 
 
     }
 
-    .div3 {
-        height: 30vh;
-        font-size: 1.9rem;
-        margin-top: 490px;
+    .div3{
+        height: 35vh;
+        font-size: 1.8rem; 
+        margin-top: 370px;
         padding: 0 70px 0 70px;
 
 
@@ -887,6 +1079,8 @@ footer {
         }
 
     }
+
+
 }
 
 
@@ -895,23 +1089,46 @@ footer {
 
         grid-template-columns: 0.62fr 4fr 0.62fr;
     }
+    .nav_var{
+        width: 75%;  
+        height: 23vh;
 
-    .nav_var {
-        width: 75%;
+        .form{
+            .linha{
+
+                display: contents;//retirar os divs no html
+            }
+            gap: 10px;
+            flex-direction: row; //colocar tudo por uma linha
+            align-items: end;//alinhar
+            
+            .grupo-input{
+                min-width: 0;
+            }
+
+            #btnMostarVeiculos{
+
+                width: 200px;
+                flex-shrink: 0; 
+                flex-grow: 0;
+            }
+
+        }
+
 
     }
 
     .div3 {
         height: 23vh;
-        font-size: 1.7rem;
-        margin-top: 450px;
+        font-size: 1.7rem; 
+        margin-top: 350px;
         padding: 0 70px 0 70px;
     }
 
     .div4 {
         height: 23vh;
-        column-gap: 53px;
-        font-size: 1.3rem;
+        column-gap: 40px;
+        font-size: 1.3rem
     }
 
     .gallery {

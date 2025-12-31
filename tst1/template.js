@@ -15,7 +15,9 @@ const btnMundo = document.getElementById("btn_mundo");
 const carrosselTrilho = document.getElementById("carrossel_quarto_andar");
 const botoesCarrossel = document.querySelectorAll('.carrossel_btn button');
 let posicaoAtual = 0; // Começa na posição zero
+
 //Event listners
+
 //Sem funções anónimas
 
 //btnMostarVeiculos.addEventListener("click",);
@@ -23,6 +25,10 @@ let posicaoAtual = 0; // Começa na posição zero
 //Com funções anónimas
 
 //Funções 
+
+function init(){
+
+}
 
 //4º Andar
 
@@ -128,7 +134,7 @@ if (btnBalcoes1) {
                     <li>Porto</li>
                     <li>Sines</li>
                 </ul>
-            </div>
++Local de devolução diferente            </div>
 
             <div class="coluna">
                 <ul>
