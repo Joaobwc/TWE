@@ -39,7 +39,6 @@
 
                 </li>
                 <li class="direita">
-
                     Gerir as Reservas
                 </li>
                 <li>PT | €</li>
@@ -49,7 +48,7 @@
                 <div id="submenu_conteudo">
                     <div id="submenu-header">
                         <span id="fechar_btn"
-                            onclick="gerirMenu()">&times</span><!--"&times" é o "x" para fechar o submenu-->
+                            onclick="gerirMenu()">×</span><!--"&times" é o "x" para fechar o submenu-->
                         <svg id="menu-logo" viewBox="0 0 1000 415" xmlns="http://www.w3.org/2000/svg" width="65"
                             height="26">
                             <path
@@ -82,19 +81,42 @@
         </div>
 
         <div class="form">
-            <input type="text" id="txtbox1" name="" value="Aeroporto, cidade ou endereço">
-            <input type="button" id="btnDevolucao" name="" value="+Local de devolução diferente">
-            <input id="dataDevolucao" type="datetime-local" value="">
-            <input id="dataRecolha" type="datetime-local" value="">
-            <button type="submit" id="btnMostarVeiculos">Mostrar veículos</button>
+            <div id="primeira_seccao">
+                <h2>Levantamento e devolução</h2>
 
+                <div id="levantamentos_devolucoes">
+                    <input type="text" id="txtbox1" name="" placeholder="Aeroporto, cidade ou endereço"
+                        autocomplete="off">
+                    <div id="levantamentos">
+                        <ul id="lista_levantamentos"> </ul>
+                        <div id="detalhes_levantamento"></div>
+                    </div>
+                    <input type="text" id="txtbox2" name="" placeholder=" +Local de devolução diferente"
+                        autocomplete="off">
+                    <div id="devolucoes">
+                        <ul id="lista_devolucoes"></ul>
+                        <div id="detalhes_devolucao"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="recolha">
+                <h2>Data de recolha</h3>
+                    <input id="dataRecolha" type="datetime-local" value="">
+            </div>
+            <div id="devolucao">
+                <h2>Data de devolução</h2>
+                <input id="dataDevolucao" type="datetime-local" value="">
+            </div>
+            <div id="mostrar_veiculos">
+                <button type="submit" id="btnMostrarVeiculos">Mostrar veículos</button>
+            </div>
         </div>
     </div>
 
     <div class="div3">
         <h1>A aventura começa aqui.</h1>
         <h1> Explore o poder da mobilidade premium.</h1>
-        <h4>Aluguer mundial de viaturas premium ao melhor preço.</h4>
+        <h2>Aluguer mundial de viaturas premium ao melhor preço.</h4>
     </div>
 
     <div class="div4">
@@ -209,7 +231,7 @@
     <div id="ultimo_andar">
         <div id="ultimo_andar_conteudo">
             <div id="texto_ultimo_andar">
-                <h2>SIXT aluguer de carros Portugal</h2>
+                <h2>SIXT ALUGUER DE CARROS PORTUGAL</h2>
                 <span>Bem-vindo à SIXT rent a car! Desde 1912, a SIXT tem vindo a desenvolver soluções de mobilidade
                     adaptando-as às cada vez mais exigentes necessidades dos seus clientes. Líder de mercado no seu país
                     de
