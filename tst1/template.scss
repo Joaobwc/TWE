@@ -133,6 +133,13 @@ body {
     color: white;
     list-style: none;
     padding: 1%;
+
+    //till
+    #til1 {
+        color: $cor-principal;
+    }
+
+
 }
 
 .direita {
@@ -951,6 +958,24 @@ footer {
             }
         }
     }
+
+    //div4 Textos Confiável..., Veículos...
+    .div4 {
+
+        //falta tratar do gap confiavel mundialmente de +2000 estações
+        flex-wrap: nowrap;
+        gap: 30px;
+
+        height: 28vh;
+        text-align: left;
+        padding: 0 20px 0 20px;
+
+    }
+
+    .gallery .img-gallery {
+        height: 43vh;
+    }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -1225,20 +1250,45 @@ footer {
 
     .nav_var {
         width: 75%;
+        height: 23vh;
+
+        .form {
+            .linha {
+
+                display: contents; //retirar os divs no html
+            }
+
+            gap: 10px;
+            flex-direction: row; //colocar tudo por uma linha
+            align-items: end; //alinhar
+
+            .grupo-input {
+                min-width: 0;
+            }
+
+            #btnMostarVeiculos {
+
+                width: 200px;
+                flex-shrink: 0;
+                flex-grow: 0;
+            }
+
+        }
+
 
     }
 
     .div3 {
         height: 23vh;
         font-size: 1.7rem;
-        margin-top: 450px;
+        margin-top: 350px;
         padding: 0 70px 0 70px;
     }
 
     .div4 {
         height: 23vh;
-        column-gap: 53px;
-        font-size: 1.3rem;
+        column-gap: 40px;
+        font-size: 1.3rem
     }
 
     .gallery {
