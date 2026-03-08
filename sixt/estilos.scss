@@ -1,0 +1,1208 @@
+//download da font 
+@font-face {
+    font-family: "Helvetica";
+    src: url("/Font/HelveticaNowDisplay.otf");
+    font-weight: 700;
+    font-size: normal;
+}
+
+;
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/Font/Roboto-Black.ttf");
+    font-weight: 100;
+    font-style: normal;
+}
+
+//Variáveis//
+//cores principais da página
+$cor-principal: #FF5000;
+
+$fonte-texto: "Helvetica";
+$fonte-titulo: "Roboto", Arial, sans-serif;
+
+//
+.til {
+    color: $cor-principal;
+}
+
+//Reset do css default aplicado pelos bavegadores
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $fonte-texto;
+}
+
+.div1 {
+    background-color: $cor-principal;
+    height: 20px;
+    max-width: 100%;
+    text-align: center;
+    padding: 0.1%;
+    font-size: small;
+}
+
+.div2 {
+    display: grid;
+    grid-template-rows: 50px;
+    //grid-template-columns: 0.7fr 4fr 0.7fr;       Desktop
+    grid-template-columns: 0.1fr 4fr 0.1fr;
+
+
+    //height: 700px; desktop
+    height: 1000px;
+    //Background do Imagem do porshe e Escurecer a imagem á volta
+    //background-image:linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.5)), url(porshe_vp_100.png); //desktop
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(porsche_636.png);
+    background-size: cover;
+    background-position: center;
+}
+
+//cor do menu sixt | gerir as Reservas | PT | Iniciar sessão
+.header {
+    background-color: transparent;
+    height: 5vh;
+    grid-row: 1 / 1;
+    grid-column: 2 /3;
+
+    #submenu_lateral {
+        #submenu_conteudo {
+            padding: 20px;
+            text-align: left;
+            display: block;
+
+            #submenu-header {
+                gap: 15px;
+                display: flex;
+
+                #fechar_btn {
+                    font-size: 25px;
+                    cursor: pointer;
+                }
+
+            }
+        }
+
+        #lista_submenu {
+            list-style: none;
+            display: block;
+
+            li {
+                padding-top: 20px;
+            }
+
+        }
+    }
+
+    #submenu_lateral.aberto {
+        //".aberto" é uma classe criado apenas no CSS, nome "aberto" para representar quando o submenu está aberto. Class serve apenas para alterar a largura
+        width: 100%;
+
+    }
+}
+
+.lista {
+    display: flex;
+
+    #menu-icon {
+        font-size: 20px; // Tamanho icon, tamanho dos "traços"
+        cursor: pointer;
+        color: white;
+    }
+}
+
+#submenu_lateral {
+    height: 100%;
+    width: 0; // Width 0 para puder ser alterado com o JS
+    position: fixed; // O elemento fica "colado" na tela, sendo assim possível fazer scroll pela página sem fechar o menu
+    z-index: 100; // Posiciona por cima de tudo
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.25s;
+}
+
+.lista li {
+    text-align: center;
+    color: white;
+    list-style: none;
+    padding: 1%;
+
+    //till
+    #til1 {
+        color: $cor-principal;
+    }
+
+
+}
+
+.direita {
+    //podia utilizar o flex para ordenar, mas não é tao eficiente
+    margin-left: auto;
+}
+
+
+
+//menu branco de aluguer
+.nav_var {
+
+    background-color: white;
+    width: 95%;
+    height: 26vh;
+    border-radius: 1rem;
+
+
+    //Box shadow
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+
+    top: 0;
+
+    margin: -955px auto 0 auto; // Top Right Bottom Left
+    position: sticky;
+
+    .btnVeiculos{
+        display: flex;
+        padding: 1rem;
+        gap: 0.5rem;
+        
+        //btn dos veículos carros e carrinhas
+        button{
+            width: 90px;
+            height: 35px;
+            border-radius: 1rem;
+            background-color:black;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+
+            &:hover{
+            background-color:gray;
+            }
+
+
+            //
+            //Estado ativo para quando o btn tiver um clik
+            &.ativo{
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+
+            }
+        }
+    }
+
+
+  
+
+    
+
+    //formulário elemento pai, coloca na vertical
+    form{
+        display: flex;
+        flex-direction: column;
+        padding: 1.3rem;
+        gap: 0.5rem;
+        font-family: sans-serif;
+
+        //Para que o #txtLocalLevantamento possa ocupar 100% do width dos pais
+        .linha, .grupo-input{
+           width: 100%;
+        }
+
+
+
+    
+        //Input Aeroporto, cidade ou endereço
+        #txtLocalLevantamento{
+            width: 100%; 
+            height: 45px; 
+            border: none;
+            border-radius: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+           
+        //Input Mostrar veículos
+        #btnMostrarVeiculos{
+            width: 100%; 
+            height: 45px; 
+            border: none;
+            border-radius: 8px;
+            background-color: $cor-principal;
+            color: white;
+            font-size: 0; //esconder o texto do butão
+            cursor: pointer;
+
+            &:hover{
+                background-color: #b33800;
+                
+            }
+
+            &::after{
+                font-size: 1rem; //voltar com a fonte, visto que herda a 0 do pai
+                content:"Selecionar local de retirada";
+            }
+        }
+
+        //ocultar os butões para a resolução pequena
+        .btnHidden{
+            display: none;
+        }
+    }
+    .tarifa{
+        text-align: center;
+        //background-color: aqua;
+        text-decoration: underline;
+        text-decoration-color: black;
+        text-underline-offset: 4px; //espaço entre a linha e o texto 
+        font-weight: bolder;
+        font-size: 0.8rem;
+        cursor: pointer;
+        
+    }
+
+}
+
+
+
+
+//div com A aventura começa aqui.
+.div3 {
+    display: flex;
+    justify-content: center; // horizontal, main axis
+    align-items: center; // vertival, cross axis
+    flex-direction: column; // voltar a coluna cada elemento da class texto
+    height: 26vh;
+    max-width: 100%;
+    background-color: $cor-principal;
+
+    text-align: center; //para funcionar o centro em reoluções mais baixas
+
+    margin-top: 700px;
+
+    //fonte
+    font-family: $fonte-titulo;
+    //font-size: 1.5rem; desktop
+    font-size: 1.3rem;
+    text-transform: uppercase;
+
+}
+
+//div4 Textos Confiável..., Veículos...
+.div4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    column-gap: 80px; //gap:80, faria extamente o mesmo 
+    //height: 20vh; desktop
+    height: 50vh;
+
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+//container imagens
+
+.gallery {
+    //width: 73%; desktop
+    width: 95%;
+    margin: 0 auto 75px auto;
+
+
+    display: grid;
+    //grid-template-rows: repeat(2, 1fr);       desktop
+    //grid-template-columns: repeat(2, 1fr);    desktop
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+
+    column-gap: 0.5vw;
+    row-gap: 1.5vh;
+
+    .img-gallery {
+        width: 100%;
+        //height: 50vh; //desktop
+        height: 87vh;
+        background-position: center;
+        background-size: cover;
+
+
+
+
+        border-radius: 2%;
+        color: white;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        ul {
+            list-style-type: none;
+            display: flex; // para aplicar o gap
+            flex-direction: column;
+            padding: 20px;
+
+
+            gap: 10px;
+
+            //Botão "Reserve já"
+            button {
+                align-items: center;
+                color: white;
+                border-color: white;
+                height: 30px;
+                width: 120px;
+                border-radius: 15px;
+                background-color: transparent;
+                cursor: pointer;
+            }
+        }
+    }
+
+    #img_mercedes {
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(conteiner_mercedes.png);
+        //grid-column: 1/3; desktop
+        //grid-row: 1/2;  desktop
+        grid-column: 1/1;
+        grid-row: 1 /2;
+
+    }
+
+    #img_smart {
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(conteiner_smart.png);
+        //grid-column: 1/2; desktop
+        //grid-row: 2/3;    desktop
+        grid-column: 1/1;
+        grid-row: 2/3;
+
+    }
+
+    #img_porche {
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(conteiner_porshe.png);
+        //grid-column: 2/3; desktop
+        //grid-row: 2/3;    desktop
+        grid-column: 1/1;
+        grid-row: 3/3;
+
+    }
+}
+
+
+
+
+/////////////////////////////////////////////////////////////
+
+.primeiro_principal .principal_c1 {
+    display: flex;
+}
+
+
+//4º andar
+#quarto_andar {
+    background-color: rgb(230, 230, 230);
+    overflow: hidden;
+
+    h1 {
+        font-size: 60px;
+        padding-top: 40px;
+        padding-bottom: 20px;
+        text-align: center;
+        font-family: $fonte-titulo;
+    }
+
+    #carrossel_quarto_andar {
+        display: flex;
+        padding-left: 15px;
+        gap: 20px;
+        flex-wrap: nowrap;
+        width: 100%;
+        transition: transform 0.4s ease;
+
+
+        #sixt_empresas {
+            cursor: pointer;
+            text-align: center;
+            border-radius: 15px;
+            display: block;
+            color: white;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(homem_com_mercedes.png);
+            background-size: cover;
+            height: 930px;
+            flex: 0 0 95%;
+
+
+            ul {
+                list-style: none;
+
+                button {
+                    align-items: center;
+                    color: white;
+                    border-color: white;
+                    height: 30px;
+                    width: 120px;
+                    border-radius: 15px;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+
+                h3 {
+                    font-family: $fonte-titulo;
+                    padding-top: 60px;
+                }
+
+                li {
+                    padding: 10px;
+                }
+            }
+        }
+
+        #subscrição_automóvel {
+            cursor: pointer;
+            text-align: center;
+            border-radius: 15px;
+            display: block;
+            color: white;
+            background-image: url(bmw.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 930px;
+            flex: 0 0 95%;
+
+            ul {
+                list-style: none;
+
+                button {
+                    align-items: center;
+                    color: white;
+                    border-color: white;
+                    height: 30px;
+                    width: 120px;
+                    border-radius: 15px;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+
+                h3 {
+                    font-family: $fonte-titulo;
+                    padding-top: 60px;
+                }
+
+                li {
+                    padding: 10px;
+                }
+            }
+        }
+
+        #SIXT_RIDE {
+            cursor: pointer;
+            text-align: center;
+            border-radius: 15px;
+            display: block;
+            color: white;
+            background-image: url(mulher.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 930px;
+            flex: 0 0 95%;
+
+            ul {
+                list-style: none;
+
+                button {
+                    align-items: center;
+                    color: white;
+                    border-color: white;
+                    height: 30px;
+                    width: 120px;
+                    border-radius: 15px;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+
+                h3 {
+                    font-family: $fonte-titulo;
+                    padding-top: 60px;
+                }
+
+                li {
+                    padding: 10px;
+                }
+            }
+
+        }
+    }
+
+    .carrossel_btn {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        text-align: center;
+
+        #primeira,
+        #segunda,
+        #terceira {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+        }
+    }
+}
+
+
+//5º andar
+#quinto_andar {
+    display: flex;
+    height: auto;
+    min-height: 700px;
+    width: auto;
+    min-width: 100%;
+    color: white;
+    background-image: url(mulher_ao_volante.png);
+    background-size: cover;
+    background-position: center;
+    align-items: center; // Centraliza verticalmente
+    justify-content: center; // Centraliza horizontalmente
+
+    span {
+        max-width: 1450px;
+        display: block;
+        font-size: 55px;
+        text-align: center;
+
+        #yasmin {
+            font-family: $fonte-titulo;
+            padding-top: 30px;
+            font-size: 27px;
+
+        }
+    }
+}
+
+//Ultimo andar
+
+#ultimo_andar {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    gap: 40px;
+
+    #texto_ultimo_andar {
+        width: 100%;
+        padding-left: 30px;
+
+        h2 {
+            font-family: $fonte-titulo;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+    }
+
+    #botoes {
+
+        #lista_aeroportos {
+            gap: 50px;
+            list-style: none;
+            padding-top: 30px;
+            padding-left: 30px;
+
+
+            #btn_aeroporto,
+            #btn_balcoes1,
+            #btn_balcoes2,
+            #btn_mundo {
+                border: none;
+                height: 30px;
+                width: 200px;
+                background-color: rgb(244, 245, 246);
+                border-radius: 15px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgb(170, 170, 170);
+                }
+
+                &:active {
+                    background-color: rgb(26, 26, 26);
+                    color: white;
+                }
+            }
+        }
+
+        #conteudo_btn {
+            padding-left: 40px;
+            padding-top: 60px;
+            width: 100%;
+            gap: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+            #aeroportosPT {
+                ul {
+                    display: flex;
+                    list-style: none;
+                    gap: 20px;
+
+                    li {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .coluna ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    padding: 5px 0;
+                    font-weight: 400;
+                    cursor: pointer;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+//Footer
+footer {
+    padding-top: 20px;
+    background-color: #1a1a1a;
+    color: white;
+
+
+    #footer_conteudo {
+        padding: 15px;
+
+        .primeira_linha {
+            display: flex;
+            justify-content: space-between;
+            height: 60px;
+
+            .simbolo_sixt {
+                cursor: pointer;
+            }
+
+            li {
+                cursor: pointer;
+            }
+
+            .redes .social {
+                display: flex;
+                gap: 15px;
+                list-style: none;
+            }
+        }
+
+        .links {
+            display: block;
+            color: white;
+            justify-content: space-between;
+
+            .coluna3 {
+                width: 550px;
+                justify-content: right;
+            }
+
+
+            #coluna1 li {
+                margin-bottom: 13px;
+                list-style: none;
+                color: white;
+                gap: 100px;
+                cursor: pointer;
+
+                &:hover {
+
+                    text-decoration: underline;
+
+                }
+
+                h3 {
+                    font-family: $fonte-titulo;
+                    cursor: auto;
+                    color: rgb(168, 168, 168);
+                    font-weight: normal; // Texto negrito 
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+            }
+
+            #coluna2 {
+                padding-top: 30px;
+
+                li {
+                    margin-bottom: 13px;
+                    list-style: none;
+                    color: white;
+                    gap: 100px;
+                    cursor: pointer;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+
+                    h3 {
+                        font-family: $fonte-titulo;
+                        cursor: auto;
+                        color: rgb(168, 168, 168);
+                        font-weight: normal; // Texto negrito 
+
+                    }
+                }
+            }
+        }
+
+        .aplicacoes {
+            padding-top: 30px;
+            display: flex;
+            gap: 10px;
+
+            #app_store {
+                cursor: pointer;
+            }
+
+            #google_play {
+                cursor: pointer;
+            }
+        }
+
+        .final_footer {
+            padding-top: 30px;
+
+            #livro_reclamações {
+                cursor: pointer;
+            }
+        }
+
+        .apoiocliente {
+            padding-top: 30px;
+            display: block;
+            justify-content: space-between;
+            flex-wrap: wrap; // Quebra de linha consoante o viewport
+
+            .lista_cliente {
+                display: flex;
+                list-style: none;
+                gap: 20px;
+                flex-wrap: wrap; // Quebra de linha consoante o viewport
+
+                li {
+                    cursor: pointer;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            #sixt {
+                padding-top: 20px;
+                color: rgb(168, 168, 168);
+                font-weight: normal; // Texto negrito 
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 640px) {
+    #ultimo_andar {
+        #botoes {
+            #lista_aeroportos {
+                gap: 15px;
+                flex-wrap: wrap; // Quebra de linha 
+                width: 100%;
+                display: flex;
+            }
+        }
+    }
+
+    //div4 Textos Confiável..., Veículos...
+    .div4 {
+
+        //falta tratar do gap confiavel mundialmente de +2000 estações
+        flex-wrap: nowrap;
+        gap: 30px;
+
+        height: 28vh;
+        text-align: left;
+        padding: 0 20px 0 20px;
+
+    }
+
+    .gallery .img-gallery {
+        height: 43vh;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        #submenu_lateral.aberto {
+            width: 370px;
+        }
+
+        #submenu_lateral {
+            #submenu_conteudo {
+                padding: 25px;
+            }
+        }
+    }
+
+    #quarto_andar {
+        width: 100%;
+        overflow: hidden;
+
+        #carrossel_quarto_andar {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+            justify-content: flex-start;
+            width: 75%;
+
+            #sixt_empresas,
+            #subscrição_automóvel,
+            #SIXT_RIDE {
+                width: 100%;
+                max-width: 360px;
+                height: 500px;
+            }
+        }
+
+        .carrossel_btn {
+            #terceira {
+                visibility: hidden;
+            }
+        }
+
+        #ultimo_andar {
+            #texto_ultimo_andar {
+                width: 20%;
+            }
+
+            #botoes {
+                #lista_aeroportos {
+                    display: flex;
+                    padding-top: 0;
+
+                }
+            }
+        }
+
+        footer {
+            .links {
+                display: flex;
+
+
+                #coluna2 {
+                    padding-top: 0px;
+
+                }
+            }
+
+            .apoiocliente {
+                #sixt {
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+}
+
+
+/* Large devices such as laptops (1024px and up) */
+@media screen and (min-width: 1024px) {
+    #quarto_andar {
+        #carrossel_quarto_andar {
+            display: flex;
+            padding-left: 0;
+            gap: 20px;
+            justify-content: center;
+            width: 75%;
+            display: flex;
+            flex-wrap: nowrap;
+            margin: 0 auto;
+            transform: none !important;
+            #sixt_empresas,
+            #subscrição_automóvel,
+            #SIXT_RIDE {
+                flex: 0 1 calc(33.33%);
+                width: calc(33.33% - 14px);
+                max-width: 480px;
+                height: 720px;
+            }
+        }
+        .carrossel_btn {
+            #primeira,
+            #segunda,
+            #terceira {
+                visibility: hidden; //Oculta botões
+            }
+        }
+    }
+    #ultimo_andar {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 60px 0;
+
+        #ultimo_andar_conteudo {
+            display: flex;
+            flex-direction: row; // Coloca texto e botões lado a lado 
+            width: 75%;
+            gap: 50px;
+            
+            /* Espaço entre o texto e a área dos botões */
+            #texto_ultimo_andar {
+                h2 {
+                    font-family: $fonte-titulo;
+                    font-size: 50px;
+                }
+                width: 40%;
+                gap: 10px;
+                font-weight: normal;
+            }
+            #botoes {
+                width: 100%;
+                #lista_aeroportos {
+                    padding-top: 0;
+                    #btn_aeroporto,
+                    #btn_balcoes1,
+                    #btn_balcoes2,
+                    #btn_mundo {
+                        &:focus {
+                            background-color: #000;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+        #conteudo_btn {
+            #aeroportosPT {
+                width: 700px;
+                ul {
+                    width: 100%;
+                    display: flex;
+                    white-space: wrap;
+                    li {
+                        font-weight: bold;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        display: flex;
+        justify-content: center;
+        #footer_conteudo {
+            width: 75%;
+            .links {
+                display: flex;
+
+                #coluna2 {
+                    padding-top: 0px;
+
+                }
+            }
+           .apoiocliente {
+                #sixt {
+                    padding-top: 0;
+                }
+            } 
+        }
+    }   
+    .div2 {
+        height: 700px;
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(porsche_vp_100.png); //desktop
+        grid-template-columns: 0.2fr 3.5fr 0.2fr;
+    }
+    .nav_var {
+        width: 88%;
+        margin: -650px auto 0 auto; // Top Right Bottom Left
+        height: 30vh;
+        form {
+            #divLocalDevolucao{
+                display: flex;
+                flex-direction: column;
+            }
+            #txtLocalLevantamento, #txtLocalDevolucao {
+                border: 1px solid #ccc;
+                border-radius: 0.8rem;
+                padding: 10px;
+                height: 45px;
+                
+            } 
+            .btnHidden{
+            display: flex;//desocultar os butoẽs
+            align-items: center;
+            white-space: nowrap;
+            }
+        
+            //colocar os inputs por linhas
+            .linha{
+                display: flex;
+                flex-direction: row;
+                gap: 0.5rem;
+                align-items: flex-end;// alinhar o texto com checkbox e colocar a label e check no fundo 
+            }
+            
+            //inputs da data de recolha e devolução
+            #dataDevolucao, #dataRecolha{
+                width: 100%; 
+                height: 45px; 
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                border-bottom: 1px solid #ccc;
+                padding: 0.5rem;//padding para dd/mm/aaaa
+                
+                
+            }
+            #btnMostrarVeiculos{
+                width: 500px;
+                font-size: 1rem;//reaparecer com o conteudo
+                &::after{
+                    content: none; //reteriar o content anterior
+                    
+                }
+            }
+        }
+        //colocar a tarifa no canto inferior esquerdo
+        .tarifa{
+            padding-left:1.5rem; //Top Right Botton Left
+            text-align: left;
+        }
+    }
+    #resultadosVeiculos {
+
+        flex-wrap: wrap; 
+        gap: 20px;   
+        justify-content: center; 
+        padding: 30px 0;
+        margin-bottom: -395px;
+    }
+    .card-veiculo {
+        background-color: white;
+        border: 1px solid white;
+        border-radius: 8px; 
+        width: 200px;      
+        display: flex;
+        flex-direction: column; 
+        padding: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    }
+
+    .card-veiculo:hover {
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        border-color: #ff5f00; 
+    }
+
+
+
+    .div3 {
+        font-family: $fonte-titulo;
+        height: 30vh;
+        font-size: 1.9rem;
+        margin-top: 370px;
+        padding: 0 70px 0 70px;
+        h2 {
+            font-size: 20px;
+        }
+
+    
+    }
+
+    .div4 {
+        font-family: $fonte-titulo;
+        height: 30vh;
+        padding: 0 70px 0 70px;
+    }
+    .gallery {
+        width: 88%;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        .img-gallery {
+            height: 50vh;
+        }
+        #img_mercedes {
+            grid-column: 1/3;
+            grid-row: 1/2;
+        }
+        #img_smart {
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+        #img_porche {
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+    }
+    
+
+}
+
+@media only screen and (min-width: 1280px) {
+    .div2 {
+
+        grid-template-columns: 0.62fr 4fr 0.62fr;
+    }
+
+    .nav_var {
+        width: 75%;
+        height: 23vh;
+
+        form{
+            .linha{
+
+                display: contents; //retirar os divs no html
+            }
+
+            gap: 10px;
+            flex-direction: row; //colocar tudo por uma linha
+            align-items: end; //alinhar
+
+            .grupo-input {
+                min-width: 0;
+            }
+
+
+            #btnMostrarVeiculos{
+
+                width: 200px;
+                flex-shrink: 0;
+                flex-grow: 0;
+            }
+
+        }
+
+
+    }
+ 
+    .div3 {
+        height: 23vh;
+        font-size: 1.7rem;
+        margin-top: 350px;
+        padding: 0 70px 0 70px;
+    }
+
+    .div4 {
+        height: 23vh;
+        column-gap: 40px;
+        font-size: 1.3rem
+    }
+
+    .gallery {
+        width: 75%;
+    }
+}
